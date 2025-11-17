@@ -1,13 +1,14 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertTriangle, Eye, ClipboardCheck, FileText, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const actions = [
-  { label: "Report Incident", icon: AlertTriangle, variant: "destructive" as const },
-  { label: "Report Near Miss", icon: Eye, variant: "warning" as const },
-  { label: "Submit JSA", icon: ClipboardCheck, variant: "default" as const },
-  { label: "Request PTW", icon: FileText, variant: "default" as const },
-  { label: "Raise Observation", icon: Sparkles, variant: "success" as const },
+  { label: "Report Incident", icon: AlertTriangle, variant: "destructive" as const, link: "/create-incident" },
+  { label: "Report Near Miss", icon: Eye, variant: "warning" as const, link: "#" },
+  { label: "Submit JSA", icon: ClipboardCheck, variant: "default" as const, link: "#" },
+  { label: "Request PTW", icon: FileText, variant: "default" as const, link: "#" },
+  { label: "Raise Observation", icon: Sparkles, variant: "success" as const, link: "#" },
 ];
 
 export const QuickActions = () => {
@@ -21,9 +22,12 @@ export const QuickActions = () => {
             variant={action.variant}
             className="justify-start h-auto py-4 text-left"
             size="lg"
+            asChild
           >
-            <action.icon className="w-5 h-5 mr-3 flex-shrink-0" />
-            <span className="font-semibold">{action.label}</span>
+            <Link to={action.link}>
+              <action.icon className="w-5 h-5 mr-3 flex-shrink-0" />
+              <span className="font-semibold">{action.label}</span>
+            </Link>
           </Button>
         ))}
       </div>
