@@ -9,6 +9,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -19,8 +20,8 @@ const Index = () => {
         {/* Header Bar with HSSE Links */}
         <div className="bg-primary/5 border-b border-border px-6 py-2">
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="sm" className="text-foreground hover:bg-primary/10">
-              HSSE Reports
+            <Button variant="ghost" size="sm" className="text-foreground hover:bg-primary/10" asChild>
+              <Link to="/hsse-reports">HSSE Reports</Link>
             </Button>
             <Button variant="ghost" size="sm" className="text-foreground hover:bg-primary/10">
               HSSE Tutorials
