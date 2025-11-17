@@ -19,6 +19,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/hsse-reports" element={<HSSEReports />} />
+          <Route path="/create-new" element={<CreateIncident />} />
           <Route path="/create-incident" element={<CreateIncident />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
