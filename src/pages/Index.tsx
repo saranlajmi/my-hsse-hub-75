@@ -16,6 +16,18 @@ const Index = () => {
       <Sidebar />
       
       <main className="flex-1 ml-64">
+        {/* Header Bar with HSSE Links */}
+        <div className="bg-primary/5 border-b border-border px-6 py-2">
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="sm" className="text-foreground hover:bg-primary/10">
+              HSSE Reports
+            </Button>
+            <Button variant="ghost" size="sm" className="text-foreground hover:bg-primary/10">
+              HSSE Tutorials
+            </Button>
+          </div>
+        </div>
+
         {/* Top Navigation Bar */}
         <div className="bg-card border-b border-border px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
