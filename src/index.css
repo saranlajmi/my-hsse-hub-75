@@ -8,68 +8,68 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
+    --background: 0 0% 100%;
+    --foreground: 205 50% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 205 50% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 205 50% 15%;
 
-    --primary: 210 100% 35%;
+    --primary: 205 87% 29%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 150 60% 45%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 205 60% 85%;
+    --secondary-foreground: 205 87% 29%;
 
-    --muted: 210 15% 95%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 205 20% 45%;
 
-    --accent: 35 100% 55%;
-    --accent-foreground: 215 25% 15%;
+    --accent: 205 100% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 85% 50%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 210 100% 35%;
+    --input: 210 20% 94%;
+    --ring: 205 87% 29%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 215 30% 20%;
-    --sidebar-foreground: 210 20% 95%;
-    --sidebar-primary: 210 100% 35%;
+    --sidebar-background: 205 50% 12%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 205 100% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 25% 25%;
-    --sidebar-accent-foreground: 210 20% 95%;
-    --sidebar-border: 215 20% 25%;
-    --sidebar-ring: 210 100% 35%;
+    --sidebar-accent: 205 45% 16%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 205 35% 18%;
+    --sidebar-ring: 205 100% 45%;
 
-    --success: 150 60% 45%;
+    --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
     
-    --warning: 35 100% 55%;
-    --warning-foreground: 215 25% 15%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 205 50% 15%;
     
-    --info: 210 100% 50%;
+    --info: 205 100% 45%;
     --info-foreground: 0 0% 100%;
     
-    --chart-1: 210 100% 35%;
-    --chart-2: 150 60% 45%;
-    --chart-3: 35 100% 55%;
-    --chart-4: 270 60% 50%;
+    --chart-1: 205 87% 45%;
+    --chart-2: 142 76% 45%;
+    --chart-3: 38 92% 55%;
+    --chart-4: 270 60% 55%;
     --chart-5: 340 75% 55%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 35%) 0%, hsl(210 100% 50%) 100%);
-    --gradient-success: linear-gradient(135deg, hsl(150 60% 45%) 0%, hsl(150 60% 60%) 100%);
-    --gradient-warning: linear-gradient(135deg, hsl(35 100% 55%) 0%, hsl(35 100% 65%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(205 87% 29%) 0%, hsl(205 87% 45%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 50%) 100%);
+    --gradient-warning: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(38 92% 60%) 100%);
     
-    --shadow-sm: 0 1px 2px 0 hsl(210 20% 15% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(210 20% 15% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(210 20% 15% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(210 20% 15% / 0.15);
+    --shadow-sm: 0 1px 2px 0 hsl(205 20% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(205 20% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(205 20% 15% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(205 20% 15% / 0.15);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -126,9 +126,14 @@ All colors MUST be HSL.
 @layer base {
   * {
     @apply border-border;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2315455D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m13 2-2 2.5L13 7'/%3E%3Cpath d='M10 14 8.5 9.5 13 8l-3 6'/%3E%3Cpath d='M16 14h.01'/%3E%3Cpath d='M13 16h.01'/%3E%3Cpath d='M10 18h.01'/%3E%3Cpath d='m2 18 2-2.5L2 13'/%3E%3C/svg%3E"), auto;
   }
 
   body {
     @apply bg-background text-foreground;
+  }
+  
+  button, a, [role="button"] {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231565C0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m13 2-2 2.5L13 7'/%3E%3Cpath d='M10 14 8.5 9.5 13 8l-3 6'/%3E%3Cpath d='M16 14h.01'/%3E%3Cpath d='M13 16h.01'/%3E%3Cpath d='M10 18h.01'/%3E%3Cpath d='m2 18 2-2.5L2 13'/%3E%3C/svg%3E"), pointer;
   }
 }
