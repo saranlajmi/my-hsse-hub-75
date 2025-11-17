@@ -41,13 +41,13 @@ export const Sidebar = () => {
       </div>
       
       {/* Logo/Branding */}
-      <div className="p-6 border-b border-sidebar-border">
-        <div className="flex items-center gap-3">
-          <img src={reactLogo} alt="REACT Logo" className="w-10 h-10 object-contain" />
-          <div>
-            <h1 className="text-xl font-bold text-sidebar-foreground">REACT</h1>
-            <p className="text-xs text-sidebar-foreground/60">Kuwait Oil Company</p>
-          </div>
+      <div className="px-6 py-8 border-b border-sidebar-border">
+        <div className="flex flex-col items-center justify-center">
+          <img 
+            src={reactLogo} 
+            alt="REACT - Report, Evaluate, Act, Correct, Track" 
+            className="w-full max-w-[220px] object-contain"
+          />
         </div>
       </div>
       
@@ -71,7 +71,7 @@ export const Sidebar = () => {
       <div className="p-4 border-t border-sidebar-border">
         <div className="px-4 py-3 rounded-lg bg-sidebar-accent/50">
           <p className="text-xs text-sidebar-foreground/60 text-center">
-            Report, Evaluate, Act, Correct, Track
+            Kuwait Oil Company
           </p>
         </div>
       </div>
