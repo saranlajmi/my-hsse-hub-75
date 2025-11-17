@@ -20,26 +20,6 @@ const navItems = [
 export const Sidebar = () => {
   return (
     <aside className="fixed left-0 top-0 h-screen w-64 bg-sidebar border-r border-sidebar-border flex flex-col">
-      {/* Top Bar */}
-      <div className="p-3 border-b border-sidebar-border bg-sidebar-accent/30">
-        <div className="flex gap-2">
-          {topBarItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={cn(
-                "flex items-center gap-2 px-3 py-2 rounded-md text-xs font-medium transition-all duration-200",
-                "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent"
-              )}
-              activeClassName="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary hover:text-sidebar-primary-foreground"
-            >
-              <item.icon className="w-4 h-4" />
-              <span>{item.title}</span>
-            </NavLink>
-          ))}
-        </div>
-      </div>
-      
       {/* Logo/Branding */}
       <div className="px-6 py-8 border-b border-sidebar-border">
         <div className="flex flex-col items-center justify-center">
