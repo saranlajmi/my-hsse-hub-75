@@ -1,7 +1,6 @@
 import { Sidebar } from "@/components/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 
 const HSSEReports = () => {
@@ -41,91 +40,46 @@ const HSSEReports = () => {
           </div>
         </div>
 
-        <div className="p-6">
-          <Tabs defaultValue="leading-indicators" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 lg:grid-cols-8 gap-1 h-auto">
-              <TabsTrigger value="leading-indicators" className="text-xs">
-                Leading Indicators
-              </TabsTrigger>
-              <TabsTrigger value="lagging-indicators" className="text-xs">
-                Lagging Indicators
-              </TabsTrigger>
-              <TabsTrigger value="contractor-hse" className="text-xs">
-                Contractor HSE Management
-              </TabsTrigger>
-              <TabsTrigger value="induction-center" className="text-xs">
-                HSE Induction Center
-              </TabsTrigger>
-              <TabsTrigger value="contractor-performance" className="text-xs">
-                Contractor Performance
-              </TabsTrigger>
-              <TabsTrigger value="hse-highlights" className="text-xs">
-                HSE Highlights
-              </TabsTrigger>
-              <TabsTrigger value="water-wastewater" className="text-xs">
-                Water & Wastewater
-              </TabsTrigger>
-              <TabsTrigger value="water-produced" className="text-xs">
-                Water & Produced Water
-              </TabsTrigger>
-            </TabsList>
+        <div className="p-6 space-y-6">
+          <Card className="p-6">
+            <h2 className="text-xl font-semibold text-foreground mb-4">Leading Indicators</h2>
+            <p className="text-muted-foreground">Content for Leading Indicators reports will be displayed here.</p>
+          </Card>
 
-            <TabsContent value="leading-indicators" className="mt-6">
-              <Card className="p-6">
-                <h2 className="text-xl font-semibold text-foreground mb-4">Leading Indicators</h2>
-                <p className="text-muted-foreground">Content for Leading Indicators reports will be displayed here.</p>
-              </Card>
-            </TabsContent>
+          <Card className="p-6">
+            <h2 className="text-xl font-semibold text-foreground mb-4">Lagging Indicators</h2>
+            <p className="text-muted-foreground">Content for Lagging Indicators reports will be displayed here.</p>
+          </Card>
 
-            <TabsContent value="lagging-indicators" className="mt-6">
-              <Card className="p-6">
-                <h2 className="text-xl font-semibold text-foreground mb-4">Lagging Indicators</h2>
-                <p className="text-muted-foreground">Content for Lagging Indicators reports will be displayed here.</p>
-              </Card>
-            </TabsContent>
+          <Card className="p-6">
+            <h2 className="text-xl font-semibold text-foreground mb-4">Contractor HSE Management & Engagement System</h2>
+            <p className="text-muted-foreground">Content for Contractor HSE Management & Engagement System will be displayed here.</p>
+          </Card>
 
-            <TabsContent value="contractor-hse" className="mt-6">
-              <Card className="p-6">
-                <h2 className="text-xl font-semibold text-foreground mb-4">Contractor HSE Management & Engagement System</h2>
-                <p className="text-muted-foreground">Content for Contractor HSE Management & Engagement System will be displayed here.</p>
-              </Card>
-            </TabsContent>
+          <Card className="p-6">
+            <h2 className="text-xl font-semibold text-foreground mb-4">HSE Induction Center Reports</h2>
+            <p className="text-muted-foreground">Content for HSE Induction Center Reports will be displayed here.</p>
+          </Card>
 
-            <TabsContent value="induction-center" className="mt-6">
-              <Card className="p-6">
-                <h2 className="text-xl font-semibold text-foreground mb-4">HSE Induction Center Reports</h2>
-                <p className="text-muted-foreground">Content for HSE Induction Center Reports will be displayed here.</p>
-              </Card>
-            </TabsContent>
+          <Card className="p-6">
+            <h2 className="text-xl font-semibold text-foreground mb-4">Contractor HSE Performance</h2>
+            <p className="text-muted-foreground">Content for Contractor HSE Performance will be displayed here.</p>
+          </Card>
 
-            <TabsContent value="contractor-performance" className="mt-6">
-              <Card className="p-6">
-                <h2 className="text-xl font-semibold text-foreground mb-4">Contractor HSE Performance</h2>
-                <p className="text-muted-foreground">Content for Contractor HSE Performance will be displayed here.</p>
-              </Card>
-            </TabsContent>
+          <Card className="p-6">
+            <h2 className="text-xl font-semibold text-foreground mb-4">HSE Highlights</h2>
+            <p className="text-muted-foreground">Content for HSE Highlights will be displayed here.</p>
+          </Card>
 
-            <TabsContent value="hse-highlights" className="mt-6">
-              <Card className="p-6">
-                <h2 className="text-xl font-semibold text-foreground mb-4">HSE Highlights</h2>
-                <p className="text-muted-foreground">Content for HSE Highlights will be displayed here.</p>
-              </Card>
-            </TabsContent>
+          <Card className="p-6">
+            <h2 className="text-xl font-semibold text-foreground mb-4">Monthly Water & Wastewater Reporting Format</h2>
+            <p className="text-muted-foreground">Content for Monthly Water & Wastewater Reporting Format will be displayed here.</p>
+          </Card>
 
-            <TabsContent value="water-wastewater" className="mt-6">
-              <Card className="p-6">
-                <h2 className="text-xl font-semibold text-foreground mb-4">Monthly Water & Wastewater Reporting Format</h2>
-                <p className="text-muted-foreground">Content for Monthly Water & Wastewater Reporting Format will be displayed here.</p>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="water-produced" className="mt-6">
-              <Card className="p-6">
-                <h2 className="text-xl font-semibold text-foreground mb-4">Monthly Water & Produced Water Data Reporting</h2>
-                <p className="text-muted-foreground">Content for Monthly Water & Produced Water Data Reporting will be displayed here.</p>
-              </Card>
-            </TabsContent>
-          </Tabs>
+          <Card className="p-6">
+            <h2 className="text-xl font-semibold text-foreground mb-4">Monthly Water & Produced Water Data Reporting</h2>
+            <p className="text-muted-foreground">Content for Monthly Water & Produced Water Data Reporting will be displayed here.</p>
+          </Card>
         </div>
       </main>
     </div>
