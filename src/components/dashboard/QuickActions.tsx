@@ -4,7 +4,7 @@ import { AlertTriangle, Eye, ClipboardCheck, FileText, Sparkles } from "lucide-r
 import { Link } from "react-router-dom";
 
 const actions = [
-  { label: "Report Incident", icon: AlertTriangle, variant: "destructive" as const, link: "/create-incident" },
+  { label: "Report Incident", icon: AlertTriangle, variant: "destructive" as const, link: "/create-new" },
   { label: "Report Near Miss", icon: Eye, variant: "warning" as const, link: "#" },
   { label: "Submit JSA", icon: ClipboardCheck, variant: "default" as const, link: "#" },
   { label: "Request PTW", icon: FileText, variant: "default" as const, link: "#" },
