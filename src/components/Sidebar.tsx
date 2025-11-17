@@ -1,4 +1,4 @@
-import { LayoutDashboard, PlusCircle, Search, ClipboardCheck, GraduationCap, BarChart3, BookOpen } from "lucide-react";
+import { LayoutDashboard, PlusCircle, Search, ClipboardCheck, GraduationCap, BarChart3, BookOpen, Settings } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { cn } from "@/lib/utils";
 import reactLogo from "@/assets/react-logo.png";
@@ -14,6 +14,7 @@ const navItems = [
   { title: "Edit/Search", icon: Search, path: "/edit-search" },
   { title: "Action Tracking System", icon: ClipboardCheck, path: "/action-tracking" },
   { title: "Training", icon: GraduationCap, path: "/training" },
+  { title: "Admin", icon: Settings, path: "/admin" },
 ];
 
 export const Sidebar = () => {
