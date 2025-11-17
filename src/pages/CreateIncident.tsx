@@ -8,9 +8,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { AlertTriangle, Upload, Plus, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { BodyDiagram } from "@/components/incident/BodyDiagram";
 
 const CreateIncident = () => {
   const [attachments, setAttachments] = useState<File[]>([]);
+  const [selectedBodyParts, setSelectedBodyParts] = useState<string[]>([]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -178,6 +180,12 @@ const CreateIncident = () => {
                   className="w-full"
                 />
               </div>
+
+              {/* Body Diagram */}
+              <BodyDiagram 
+                selectedParts={selectedBodyParts}
+                onSelectionChange={setSelectedBodyParts}
+              />
 
               {/* Witness Information */}
               <div className="space-y-2">
