@@ -8,6 +8,7 @@ import HSSEReports from "./pages/HSSEReports";
 import CreateIncident from "./pages/CreateIncident";
 import EditSearch from "./pages/EditSearch";
 import HSSETutorials from "./pages/HSSETutorials";
+import HSSEProcedures from "./pages/HSSEProcedures";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/create-incident" element={<CreateIncident />} />
           <Route path="/edit-search" element={<EditSearch />} />
           <Route path="/tutorials" element={<HSSETutorials />} />
+          <Route path="/hsse-procedures" element={<HSSEProcedures />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
