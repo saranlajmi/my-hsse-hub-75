@@ -1,12 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AlertTriangle, Eye, Sparkles } from "lucide-react";
+import { AlertTriangle, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const actions = [
   { label: "Report Incident", icon: AlertTriangle, link: "/create-new" },
   { label: "Report Near Miss", icon: Eye, link: "#" },
-  { label: "AI Assistant", icon: Sparkles, link: "#" },
 ];
 
 export const QuickActions = () => {

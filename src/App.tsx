@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route } from "react-router-dom";
+import { FloatingAIAssistant } from "@/components/FloatingAIAssistant";
 import Index from "./pages/Index";
 import HSSEReports from "./pages/HSSEReports";
 import CreateIncident from "./pages/CreateIncident";
@@ -18,6 +19,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <FloatingAIAssistant />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/hsse-reports" element={<HSSEReports />} />
