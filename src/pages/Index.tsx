@@ -3,7 +3,6 @@ import { StatsCard } from "@/components/dashboard/StatsCard";
 import { PersonalTargets } from "@/components/dashboard/PersonalTargets";
 import { ExecutiveTargets } from "@/components/dashboard/ExecutiveTargets";
 import { QuickActions } from "@/components/dashboard/QuickActions";
-import { AIAssistant } from "@/components/dashboard/AIAssistant";
 import { RecentActivity } from "@/components/dashboard/RecentActivity";
 import { AlertTriangle, CheckCircle2, Clock, TrendingUp, TrendingDown, Users } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -137,7 +136,6 @@ const Index = () => {
             
             <div className="space-y-6">
               <QuickActions />
-              <AIAssistant />
             </div>
           </div>
         </div>
