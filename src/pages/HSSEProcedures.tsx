@@ -36,10 +36,10 @@ const HSSEProcedures = () => {
               placeholder="Search..." 
               className="w-64 bg-sidebar-accent border-sidebar-border text-sidebar-foreground placeholder:text-sidebar-foreground/60"
             />
-            <Button variant="default" size="sm">
+            <Button variant="outline" size="sm" className="border-white text-sidebar-foreground hover:bg-sidebar-accent">
               Feedback
             </Button>
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-medium">
+            <div className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-sidebar-foreground font-medium">
               AK
             </div>
           </div>
