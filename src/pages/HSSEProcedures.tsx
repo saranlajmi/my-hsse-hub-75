@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ExternalLink, FileText } from "lucide-react";
 import { UserProfileDropdown } from "@/components/UserProfileDropdown";
+import { FloatingAIAssistant } from "@/components/FloatingAIAssistant";
 
 const HSSEProcedures = () => {
   return (
@@ -74,6 +75,7 @@ const HSSEProcedures = () => {
           </Card>
         </div>
       </main>
+      <FloatingAIAssistant />
     </div>
   );
 };
