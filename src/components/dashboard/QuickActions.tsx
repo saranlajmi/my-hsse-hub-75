@@ -1,4 +1,3 @@
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertTriangle, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -10,7 +9,7 @@ const actions = [
 
 export const QuickActions = () => {
   return (
-    <Card className="p-4 bg-transparent border-white/20">
+    <div className="p-4">
       <h2 className="text-base font-bold text-sidebar-foreground mb-3">Quick Actions</h2>
       <div className="space-y-2">
         {actions.map((action, index) => (
@@ -28,6 +27,6 @@ export const QuickActions = () => {
           </Button>
         ))}
       </div>
-    </Card>
+    </div>
   );
 };
