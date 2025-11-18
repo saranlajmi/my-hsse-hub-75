@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import bodyFront from "@/assets/body-diagram-front.png";
-import bodyBack from "@/assets/body-diagram-back.png";
+import bodyFront from "@/assets/body-diagram-front-new.png";
+import bodyBack from "@/assets/body-diagram-back-new.png";
 import { Button } from "@/components/ui/button";
 
 interface BodyDiagramProps {
