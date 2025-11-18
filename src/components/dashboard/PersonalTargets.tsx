@@ -44,7 +44,7 @@ export const PersonalTargets = () => {
               </div>
               <Progress value={percentage} className="h-2" />
               {isComplete && (
-                <div className="flex items-center gap-1 text-xs text-foreground">
+                <div className="flex items-center gap-1 text-xs text-success">
                   <TrendingUp className="w-3 h-3" />
                   <span>Target achieved!</span>
                 </div>
@@ -58,12 +58,12 @@ export const PersonalTargets = () => {
         <h3 className="text-sm font-semibold text-foreground mb-2">My HSSE Scorecard</h3>
         <div className="grid grid-cols-2 gap-4">
           <div>
-              <span className="text-xs text-muted-foreground">On-time completion</span>
-              <p className="text-lg font-bold text-foreground">92%</p>
-            </div>
-            <div>
-              <p className="text-xs text-muted-foreground">Overdue actions</p>
-              <p className="text-lg font-bold text-foreground">2</p>
+            <p className="text-xs text-muted-foreground">On-time completion</p>
+            <p className="text-lg font-bold text-success">92%</p>
+          </div>
+          <div>
+            <p className="text-xs text-muted-foreground">Overdue actions</p>
+            <p className="text-lg font-bold text-destructive">2</p>
           </div>
         </div>
       </div>

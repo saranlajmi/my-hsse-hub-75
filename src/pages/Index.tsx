@@ -78,7 +78,7 @@ const Index = () => {
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 text-foreground">
+                <div className="flex items-center gap-1 text-success">
                   <TrendingUp className="w-4 h-4" />
                   <span className="text-sm font-medium">+15 days</span>
                 </div>
@@ -98,7 +98,7 @@ const Index = () => {
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 text-foreground">
+                <div className="flex items-center gap-1 text-success">
                   <TrendingDown className="w-4 h-4" />
                   <span className="text-sm font-medium">-2</span>
                 </div>
@@ -118,7 +118,7 @@ const Index = () => {
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 text-foreground">
+                <div className="flex items-center gap-1 text-success">
                   <TrendingUp className="w-4 h-4" />
                   <span className="text-sm font-medium">+3%</span>
                 </div>
