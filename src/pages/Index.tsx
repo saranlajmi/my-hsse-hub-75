@@ -98,7 +98,7 @@ const Index = () => {
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 text-success">
+                <div className="flex items-center gap-1 text-destructive">
                   <TrendingDown className="w-4 h-4" />
                   <span className="text-sm font-medium">-2</span>
                 </div>
