@@ -26,8 +26,8 @@ const Index = () => {
             <Button variant="ghost" size="sm" className="text-sidebar-foreground hover:bg-sidebar-accent" asChild>
               <Link to="/tutorials">HSSE Tutorials</Link>
             </Button>
-            <Button variant="ghost" size="sm" className="text-sidebar-foreground hover:bg-sidebar-accent">
-              HSSE Procedures
+            <Button variant="ghost" size="sm" className="text-sidebar-foreground hover:bg-sidebar-accent" asChild>
+              <Link to="/hsse-procedures">HSSE Procedures</Link>
             </Button>
           </div>
         </div>
