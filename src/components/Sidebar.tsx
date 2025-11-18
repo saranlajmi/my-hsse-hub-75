@@ -58,19 +58,6 @@ export const Sidebar = () => {
           </NavLink>
         ))}
 
-        {/* Admin */}
-        <NavLink
-          to="/admin"
-          className={cn(
-            "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200",
-            "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent"
-          )}
-          activeClassName="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary hover:text-sidebar-primary-foreground"
-        >
-          <Settings className="w-5 h-5" />
-          <span className="font-medium">Admin</span>
-        </NavLink>
-
         {/* Action Tracking System with collapsible sub-items */}
         <Collapsible open={isActionTrackingOpen} onOpenChange={setIsActionTrackingOpen}>
           <CollapsibleTrigger
@@ -105,6 +92,19 @@ export const Sidebar = () => {
             ))}
           </CollapsibleContent>
         </Collapsible>
+
+        {/* Admin */}
+        <NavLink
+          to="/admin"
+          className={cn(
+            "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200",
+            "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent"
+          )}
+          activeClassName="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary hover:text-sidebar-primary-foreground"
+        >
+          <Settings className="w-5 h-5" />
+          <span className="font-medium">Admin</span>
+        </NavLink>
       </nav>
       
       <div className="p-4 border-t border-sidebar-border">
