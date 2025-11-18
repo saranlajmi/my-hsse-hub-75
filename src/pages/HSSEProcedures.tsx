@@ -63,7 +63,7 @@ const HSSEProcedures = () => {
             <Button 
               size="lg" 
               className="w-full max-w-md mx-auto gap-2"
-              onClick={() => window.open('https://your-procedures-portal.com', '_blank')}
+              onClick={() => window.open('https://mykocportal.kockw.com/sites/EG/HSE/Contents/HSE%20and%20HSE%20MS%20Procedures.aspx', '_blank')}
             >
               <ExternalLink className="w-5 h-5" />
               Open Procedures Portal
