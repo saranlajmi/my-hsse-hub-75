@@ -4,11 +4,11 @@ import { AlertTriangle, Eye, ClipboardCheck, FileText, Sparkles } from "lucide-r
 import { Link } from "react-router-dom";
 
 const actions = [
-  { label: "Report Incident", icon: AlertTriangle, variant: "destructive" as const, link: "/create-new" },
-  { label: "Report Near Miss", icon: Eye, variant: "warning" as const, link: "#" },
-  { label: "Submit JSA", icon: ClipboardCheck, variant: "default" as const, link: "#" },
-  { label: "Request PTW", icon: FileText, variant: "default" as const, link: "#" },
-  { label: "Raise Observation", icon: Sparkles, variant: "success" as const, link: "#" },
+  { label: "Report Incident", icon: AlertTriangle, link: "/create-new" },
+  { label: "Report Near Miss", icon: Eye, link: "#" },
+  { label: "Submit JSA", icon: ClipboardCheck, link: "#" },
+  { label: "Request PTW", icon: FileText, link: "#" },
+  { label: "Raise Observation", icon: Sparkles, link: "#" },
 ];
 
 export const QuickActions = () => {
@@ -19,8 +19,8 @@ export const QuickActions = () => {
         {actions.map((action, index) => (
           <Button
             key={index}
-            variant={action.variant}
-            className="justify-start h-auto py-4 text-left"
+            variant="outline"
+            className="justify-start h-auto py-4 text-left border-sidebar bg-transparent text-foreground hover:bg-sidebar/10"
             size="lg"
             asChild
           >
