@@ -177,18 +177,6 @@ const CreateIncident = () => {
                 onSelectionChange={setSelectedBodyParts}
               />
 
-              {/* Witness Information */}
-              <div className="space-y-2">
-                <Label htmlFor="witnesses" className="text-sm font-medium">
-                  Witness(es)
-                </Label>
-                <Textarea 
-                  id="witnesses"
-                  placeholder="List any witnesses and their contact information..."
-                  className="w-full min-h-[80px]"
-                />
-              </div>
-
               {/* Root Cause */}
               <div className="space-y-2">
                 <Label htmlFor="root-cause" className="text-sm font-medium">
