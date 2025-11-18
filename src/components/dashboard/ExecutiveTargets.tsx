@@ -28,21 +28,26 @@ const MetricCard = ({ metrics, title, icon: Icon }: { metrics: MetricItem[], tit
         <h3 className="text-lg font-semibold text-foreground">{title}</h3>
       </div>
       <div className="space-y-3">
-        {metrics.map((metric, index) => (
-          <div key={index} className="p-4 rounded-lg bg-muted/50 border border-border">
-            <p className="text-sm font-medium text-foreground mb-3">{metric.label}</p>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <p className="text-xs text-muted-foreground mb-1">Target</p>
-                <p className="text-2xl font-bold text-foreground">{metric.target}</p>
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground mb-1">YTD</p>
-                <p className="text-2xl font-bold text-primary">{metric.ytd}</p>
+        {metrics.map((metric, index) => {
+          const isOverTarget = metric.ytd > metric.target;
+          const ytdColor = isOverTarget ? "text-destructive" : "text-success";
+          
+          return (
+            <div key={index} className="p-4 rounded-lg bg-muted/50 border border-border">
+              <p className="text-sm font-medium text-foreground mb-3">{metric.label}</p>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <p className="text-xs text-muted-foreground mb-1">Target</p>
+                  <p className="text-2xl font-bold text-foreground">{metric.target}</p>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground mb-1">YTD</p>
+                  <p className={`text-2xl font-bold ${ytdColor}`}>{metric.ytd}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
