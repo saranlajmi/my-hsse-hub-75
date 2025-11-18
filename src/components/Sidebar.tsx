@@ -15,7 +15,6 @@ const navItems = [
   { title: "Create New", icon: PlusCircle, path: "/create-new" },
   { title: "Edit/Search", icon: Search, path: "/edit-search" },
   { title: "Training", icon: GraduationCap, path: "/training" },
-  { title: "Admin", icon: Settings, path: "/admin" },
 ];
 
 const actionTrackingItems = [
@@ -58,6 +57,19 @@ export const Sidebar = () => {
             <span className="font-medium">{item.title}</span>
           </NavLink>
         ))}
+
+        {/* Admin */}
+        <NavLink
+          to="/admin"
+          className={cn(
+            "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200",
+            "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent"
+          )}
+          activeClassName="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary hover:text-sidebar-primary-foreground"
+        >
+          <Settings className="w-5 h-5" />
+          <span className="font-medium">Admin</span>
+        </NavLink>
 
         {/* Action Tracking System with collapsible sub-items */}
         <Collapsible open={isActionTrackingOpen} onOpenChange={setIsActionTrackingOpen}>
