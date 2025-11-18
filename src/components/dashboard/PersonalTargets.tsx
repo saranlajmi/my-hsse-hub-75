@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Target, TrendingUp } from "lucide-react";
+import { User, TrendingUp } from "lucide-react";
 
 interface TargetItem {
   label: string;
@@ -21,7 +21,7 @@ export const PersonalTargets = () => {
     <Card className="p-6">
       <div className="flex items-center gap-2 mb-6">
         <div className="w-10 h-10 rounded-lg bg-foreground/10 flex items-center justify-center">
-          <Target className="w-5 h-5 text-foreground" />
+          <User className="w-5 h-5 text-foreground" />
         </div>
         <div>
           <h2 className="text-xl font-bold text-foreground">Personal Targets</h2>
