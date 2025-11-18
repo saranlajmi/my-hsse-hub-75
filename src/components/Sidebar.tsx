@@ -1,7 +1,7 @@
 import { LayoutDashboard, PlusCircle, Search, ClipboardCheck, GraduationCap, BarChart3, BookOpen, Settings, ChevronDown, ChevronRight } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { cn } from "@/lib/utils";
-import reactLogo from "@/assets/react-logo.png";
+import logo from "@/assets/logo.png";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
 
@@ -43,9 +43,9 @@ export const Sidebar = () => {
       <div className="px-6 py-8 border-b border-sidebar-border">
         <div className="flex flex-col items-center justify-center">
           <img 
-            src={reactLogo} 
-            alt="REACT - Report, Evaluate, Act, Correct, Track" 
-            className="w-full max-w-[220px] object-contain"
+            src={logo} 
+            alt="Company Logo" 
+            className="w-full max-w-[180px] object-contain"
           />
         </div>
       </div>
