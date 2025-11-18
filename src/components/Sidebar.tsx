@@ -14,7 +14,6 @@ const navItems = [
   { title: "Dashboard", icon: LayoutDashboard, path: "/" },
   { title: "Create New", icon: PlusCircle, path: "/create-new" },
   { title: "Edit/Search", icon: Search, path: "/edit-search" },
-  { title: "Training", icon: GraduationCap, path: "/training" },
 ];
 
 const actionTrackingItems = [
@@ -26,8 +25,16 @@ const actionTrackingItems = [
   { title: "ATS Help Files", path: "/action-tracking/help" },
 ];
 
+const hseInductionItems = [
+  { title: "Registration (Employees)", path: "/hse-induction/registration" },
+  { title: "Contact US", path: "/hse-induction/contact" },
+  { title: "Awareness Presentation(PDF File)", path: "/hse-induction/awareness" },
+  { title: "E-Passport", path: "/hse-induction/e-passport" },
+];
+
 export const Sidebar = () => {
   const [isActionTrackingOpen, setIsActionTrackingOpen] = useState(false);
+  const [isHSEInductionOpen, setIsHSEInductionOpen] = useState(false);
 
   return (
     <aside className="fixed left-0 top-0 h-screen w-64 bg-sidebar border-r border-sidebar-border flex flex-col">
@@ -87,6 +94,40 @@ export const Sidebar = () => {
                 activeClassName="bg-sidebar-accent text-sidebar-foreground"
               >
                 {item.isSubItem && <ChevronRight className="w-3 h-3" />}
+                <span className="text-sm">{item.title}</span>
+              </NavLink>
+            ))}
+          </CollapsibleContent>
+        </Collapsible>
+
+        {/* HSE Induction Center with collapsible sub-items */}
+        <Collapsible open={isHSEInductionOpen} onOpenChange={setIsHSEInductionOpen}>
+          <CollapsibleTrigger
+            className={cn(
+              "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 w-full",
+              "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent"
+            )}
+          >
+            <GraduationCap className="w-5 h-5" />
+            <span className="font-medium flex-1 text-left">HSE Induction Center</span>
+            {isHSEInductionOpen ? (
+              <ChevronDown className="w-4 h-4" />
+            ) : (
+              <ChevronRight className="w-4 h-4" />
+            )}
+          </CollapsibleTrigger>
+          <CollapsibleContent className="space-y-1 mt-1">
+            {hseInductionItems.map((item) => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={cn(
+                  "flex items-center gap-3 py-2 rounded-lg transition-all duration-200",
+                  "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                  "pl-8 pr-4"
+                )}
+                activeClassName="bg-sidebar-accent text-sidebar-foreground"
+              >
                 <span className="text-sm">{item.title}</span>
               </NavLink>
             ))}
