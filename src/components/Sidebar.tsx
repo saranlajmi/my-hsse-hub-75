@@ -60,7 +60,7 @@ export const Sidebar = () => {
               "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200",
               "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent"
             )}
-            activeClassName="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary hover:text-sidebar-primary-foreground"
+            activeClassName="bg-white text-sidebar hover:bg-white hover:text-sidebar"
           >
             <item.icon className="w-5 h-5" />
             <span className="font-medium">{item.title}</span>
@@ -93,7 +93,7 @@ export const Sidebar = () => {
                   "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent",
                   item.isSubItem ? "pl-12 pr-4" : "pl-8 pr-4"
                 )}
-                activeClassName="bg-sidebar-accent text-sidebar-foreground"
+                activeClassName="bg-white text-sidebar"
               >
                 {item.isSubItem && <ChevronRight className="w-3 h-3" />}
                 <span className="text-sm">{item.title}</span>
@@ -128,7 +128,7 @@ export const Sidebar = () => {
                   "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent",
                   "pl-8 pr-4"
                 )}
-                activeClassName="bg-sidebar-accent text-sidebar-foreground"
+                activeClassName="bg-white text-sidebar"
               >
                 <span className="text-sm">{item.title}</span>
               </NavLink>
@@ -143,7 +143,7 @@ export const Sidebar = () => {
             "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200",
             "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent"
           )}
-          activeClassName="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary hover:text-sidebar-primary-foreground"
+          activeClassName="bg-white text-sidebar hover:bg-white hover:text-sidebar"
         >
           <Settings className="w-5 h-5" />
           <span className="font-medium">Admin</span>
