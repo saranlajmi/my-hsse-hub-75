@@ -6,9 +6,6 @@ import { Link } from "react-router-dom";
 const actions = [
   { label: "Report Incident", icon: AlertTriangle, link: "/create-new" },
   { label: "Report Near Miss", icon: Eye, link: "#" },
-  { label: "Submit JSA", icon: ClipboardCheck, link: "#" },
-  { label: "Request PTW", icon: FileText, link: "#" },
-  { label: "Raise Observation", icon: Sparkles, link: "#" },
 ];
 
 export const QuickActions = () => {
