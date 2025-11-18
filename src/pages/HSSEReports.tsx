@@ -2,6 +2,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const HSSEReports = () => {
   return (
@@ -10,26 +11,29 @@ const HSSEReports = () => {
       
       <main className="flex-1 ml-64">
         {/* Header Bar with HSSE Links */}
-        <div className="bg-primary/5 border-b border-border px-6 py-2">
-          <div className="flex items-center gap-2">
-            <Button variant="ghost" size="sm" className="bg-primary/20 text-foreground hover:bg-primary/10">
-              HSSE Reports
+        <div className="bg-sidebar border-b border-sidebar-border px-6 py-2">
+          <div className="flex items-center justify-center gap-2">
+            <Button variant="ghost" size="sm" className="text-sidebar-foreground hover:bg-sidebar-accent" asChild>
+              <Link to="/hsse-reports">HSSE Reports</Link>
             </Button>
-            <Button variant="ghost" size="sm" className="text-foreground hover:bg-primary/10">
-              HSSE Tutorials
+            <Button variant="ghost" size="sm" className="text-sidebar-foreground hover:bg-sidebar-accent" asChild>
+              <Link to="/tutorials">HSSE Tutorials</Link>
+            </Button>
+            <Button variant="ghost" size="sm" className="text-sidebar-foreground hover:bg-sidebar-accent" asChild>
+              <Link to="/hsse-procedures">HSSE Procedures</Link>
             </Button>
           </div>
         </div>
 
         {/* Top Navigation Bar */}
-        <div className="bg-card border-b border-border px-6 py-4 flex items-center justify-between">
+        <div className="bg-sidebar border-b border-sidebar-border px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <h1 className="text-2xl font-bold text-foreground">HSSE Reports</h1>
+            <h1 className="text-2xl font-bold text-sidebar-foreground">HSSE Reports</h1>
           </div>
           <div className="flex items-center gap-3">
             <Input 
               placeholder="Search..." 
-              className="w-64"
+              className="w-64 bg-sidebar-accent border-sidebar-border text-sidebar-foreground placeholder:text-sidebar-foreground/60"
             />
             <Button variant="default" size="sm">
               Feedback
