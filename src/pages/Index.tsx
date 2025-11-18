@@ -19,7 +19,7 @@ const Index = () => {
       <main className="flex-1 ml-64">
         {/* Header Bar with HSSE Links */}
         <div className="bg-sidebar border-b border-sidebar-border px-6 py-2">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center justify-center gap-2">
             <Button variant="ghost" size="sm" className="text-sidebar-foreground hover:bg-sidebar-accent" asChild>
               <Link to="/hsse-reports">HSSE Reports</Link>
             </Button>
