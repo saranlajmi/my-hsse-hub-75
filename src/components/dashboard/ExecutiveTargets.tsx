@@ -14,8 +14,8 @@ const kocTargets: MetricItem[] = [
 ];
 
 const directorateTargets: MetricItem[] = [
-  { label: "Lost Time Injury Frequency Rate (LTIFR)", target: 0.025, ytd: 0.025 },
-  { label: "Environment Incidents", target: 600, ytd: 250 },
+  { label: "Lost Time Injury Frequency Rate (LTIFR)", target: 0.019, ytd: 0.025 },
+  { label: "Environment Incidents", target: 94, ytd: 16 },
 ];
 
 const MetricCard = ({ metrics, title, icon: Icon }: { metrics: MetricItem[], title: string, icon: any }) => {
