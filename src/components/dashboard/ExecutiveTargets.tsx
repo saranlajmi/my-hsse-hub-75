@@ -9,7 +9,7 @@ interface MetricItem {
 }
 
 const kocTargets: MetricItem[] = [
-  { label: "Lost Time Injury Frequency Rate (LTIFR)", target: 0.025, ytd: 0.025 },
+  { label: "Lost Time Injury Frequency Rate (LTIFR)", target: 0.025, ytd: 0.020 },
   { label: "Environment Incidents", target: 600, ytd: 250 },
 ];
 
