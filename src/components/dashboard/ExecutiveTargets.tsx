@@ -18,36 +18,22 @@ const directorateTargets: MetricItem[] = [
   { label: "Environment Incidents", target: 94, ytd: 16 },
 ];
 
-const MetricCard = ({ metrics, title, icon: Icon }: { metrics: MetricItem[], title: string, icon: any }) => {
+const MetricRow = ({ metric }: { metric: MetricItem }) => {
+  const isOverTarget = metric.ytd > metric.target;
+  const ytdColor = isOverTarget ? "text-destructive" : "text-success";
+  
   return (
-    <div className="space-y-4">
-      <div className="flex items-center gap-2">
-        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-          <Icon className="w-4 h-4 text-primary" />
+    <div className="flex items-center justify-between py-2 border-b border-border last:border-0">
+      <span className="text-sm text-foreground truncate flex-1">{metric.label}</span>
+      <div className="flex items-center gap-4 ml-4">
+        <div className="text-right">
+          <p className="text-xs text-muted-foreground">Target</p>
+          <p className="text-sm font-bold text-foreground">{metric.target}</p>
         </div>
-        <h3 className="text-lg font-semibold text-foreground">{title}</h3>
-      </div>
-      <div className="space-y-3">
-        {metrics.map((metric, index) => {
-          const isOverTarget = metric.ytd > metric.target;
-          const ytdColor = isOverTarget ? "text-destructive" : "text-success";
-          
-          return (
-            <div key={index} className="p-4 rounded-lg bg-muted/50 border border-border">
-              <p className="text-sm font-medium text-foreground mb-3">{metric.label}</p>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <p className="text-xs text-muted-foreground mb-1">Target</p>
-                  <p className="text-2xl font-bold text-foreground">{metric.target}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground mb-1">YTD</p>
-                  <p className={`text-2xl font-bold ${ytdColor}`}>{metric.ytd}</p>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        <div className="text-right">
+          <p className="text-xs text-muted-foreground">YTD</p>
+          <p className={`text-sm font-bold ${ytdColor}`}>{metric.ytd}</p>
+        </div>
       </div>
     </div>
   );
@@ -55,22 +41,36 @@ const MetricCard = ({ metrics, title, icon: Icon }: { metrics: MetricItem[], tit
 
 export const ExecutiveTargets = () => {
   return (
-    <Card className="p-6">
-      <div className="flex items-center gap-2 mb-6">
-        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-          <Target className="w-5 h-5 text-primary" />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      {/* KOC Targets */}
+      <Card className="p-4">
+        <div className="flex items-center gap-2 mb-3">
+          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+            <Building2 className="w-4 h-4 text-primary" />
+          </div>
+          <h3 className="text-base font-semibold text-foreground">KOC Targets</h3>
         </div>
-        <div>
-          <h2 className="text-xl font-bold text-foreground">Executive Targets</h2>
-          <p className="text-sm text-muted-foreground">KOC & Directorate performance metrics</p>
+        <div className="space-y-1">
+          {kocTargets.map((metric, index) => (
+            <MetricRow key={index} metric={metric} />
+          ))}
         </div>
-      </div>
+      </Card>
 
-      <div className="space-y-6">
-        <MetricCard metrics={kocTargets} title="KOC Targets" icon={Building2} />
-        <div className="border-t border-border my-6"></div>
-        <MetricCard metrics={directorateTargets} title="Directorate Targets" icon={Target} />
-      </div>
-    </Card>
+      {/* Directorate Targets */}
+      <Card className="p-4">
+        <div className="flex items-center gap-2 mb-3">
+          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+            <Target className="w-4 h-4 text-primary" />
+          </div>
+          <h3 className="text-base font-semibold text-foreground">Directorate Targets</h3>
+        </div>
+        <div className="space-y-1">
+          {directorateTargets.map((metric, index) => (
+            <MetricRow key={index} metric={metric} />
+          ))}
+        </div>
+      </Card>
+    </div>
   );
 };
