@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Brain, Send } from "lucide-react";
+import { Sparkles, Send } from "lucide-react";
 import { useState } from "react";
 
 export const AIAssistant = () => {
@@ -16,8 +16,8 @@ export const AIAssistant = () => {
   return (
     <Card className="p-6">
       <div className="flex items-center gap-2 mb-4">
-        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center">
-          <Brain className="w-5 h-5 text-primary-foreground" />
+        <div className="w-10 h-10 rounded-lg bg-foreground flex items-center justify-center">
+          <Sparkles className="w-5 h-5 text-background" />
         </div>
         <div>
           <h2 className="text-xl font-bold text-foreground">AI Assistant</h2>
