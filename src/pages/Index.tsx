@@ -73,12 +73,12 @@ const Index = () => {
                   <p className="text-4xl font-bold text-foreground mt-2">127</p>
                   <p className="text-xs text-muted-foreground mt-1">Updated: {new Date().toLocaleDateString()}</p>
                 </div>
-                <div className="text-success bg-success/10 p-3 rounded-lg">
+                <div className="text-foreground bg-foreground/10 p-3 rounded-lg">
                   <TrendingUp className="w-6 h-6" />
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 text-success">
+                <div className="flex items-center gap-1 text-foreground">
                   <TrendingUp className="w-4 h-4" />
                   <span className="text-sm font-medium">+15 days</span>
                 </div>
@@ -93,12 +93,12 @@ const Index = () => {
                   <p className="text-4xl font-bold text-foreground mt-2">8</p>
                   <p className="text-xs text-muted-foreground mt-1">Updated: {new Date().toLocaleDateString()}</p>
                 </div>
-                <div className="text-warning bg-warning/10 p-3 rounded-lg">
+                <div className="text-foreground bg-foreground/10 p-3 rounded-lg">
                   <AlertTriangle className="w-6 h-6" />
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 text-success">
+                <div className="flex items-center gap-1 text-foreground">
                   <TrendingDown className="w-4 h-4" />
                   <span className="text-sm font-medium">-2</span>
                 </div>
@@ -113,12 +113,12 @@ const Index = () => {
                   <p className="text-4xl font-bold text-foreground mt-2">94%</p>
                   <p className="text-xs text-muted-foreground mt-1">Updated: {new Date().toLocaleDateString()}</p>
                 </div>
-                <div className="text-success bg-success/10 p-3 rounded-lg">
+                <div className="text-foreground bg-foreground/10 p-3 rounded-lg">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 text-success">
+                <div className="flex items-center gap-1 text-foreground">
                   <TrendingUp className="w-4 h-4" />
                   <span className="text-sm font-medium">+3%</span>
                 </div>
