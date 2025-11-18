@@ -3,6 +3,7 @@ import { NavLink } from "@/components/NavLink";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { QuickActions } from "@/components/dashboard/QuickActions";
 import { useState } from "react";
 
 const topBarItems = [
@@ -147,6 +148,11 @@ export const Sidebar = () => {
           <Settings className="w-5 h-5" />
           <span className="font-medium">Admin</span>
         </NavLink>
+        
+        {/* Quick Actions */}
+        <div className="pt-4">
+          <QuickActions />
+        </div>
       </nav>
       
       <div className="p-4 border-t border-sidebar-border">
