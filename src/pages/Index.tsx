@@ -26,6 +26,9 @@ const Index = () => {
             <Button variant="ghost" size="sm" className="text-foreground hover:bg-primary/10">
               HSSE Tutorials
             </Button>
+            <Button variant="ghost" size="sm" className="text-foreground hover:bg-primary/10">
+              HSSE Procedures
+            </Button>
           </div>
         </div>
 

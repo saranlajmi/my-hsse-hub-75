@@ -8,6 +8,7 @@ import { useState } from "react";
 const topBarItems = [
   { title: "HSSE Reports", icon: BarChart3, path: "/hsse-reports" },
   { title: "Tutorials", icon: BookOpen, path: "/tutorials" },
+  { title: "HSSE Procedures", icon: BookOpen, path: "/hsse-procedures" },
 ];
 
 const navItems = [
