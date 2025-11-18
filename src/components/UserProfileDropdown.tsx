@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,15 +7,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Check } from "lucide-react";
-
-const accounts = [
-  { name: "Aminah Rajab", title: "DCEO Gas & Environment", initials: "AR" },
-  { name: "Nasser Al-Buhairi", title: "Manager HSE", initials: "NA" },
-  { name: "Sara Al-Ajmi", title: "Safety Engineer HSE Systems Team", initials: "SA" },
-];
+import { useUser, accounts } from "@/contexts/UserContext";
 
 export const UserProfileDropdown = () => {
-  const [selectedAccount, setSelectedAccount] = useState(0);
+  const { selectedAccount, setSelectedAccount } = useUser();
 
   return (
     <DropdownMenu>

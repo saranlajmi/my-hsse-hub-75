@@ -1,6 +1,7 @@
 import { Sidebar } from "@/components/Sidebar";
 import { StatsCard } from "@/components/dashboard/StatsCard";
 import { PersonalTargets } from "@/components/dashboard/PersonalTargets";
+import { ExecutiveTargets } from "@/components/dashboard/ExecutiveTargets";
 import { QuickActions } from "@/components/dashboard/QuickActions";
 import { AIAssistant } from "@/components/dashboard/AIAssistant";
 import { RecentActivity } from "@/components/dashboard/RecentActivity";
@@ -11,8 +12,10 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Link } from "react-router-dom";
 import { UserProfileDropdown } from "@/components/UserProfileDropdown";
+import { useUser } from "@/contexts/UserContext";
 
 const Index = () => {
+  const { currentUser } = useUser();
   return (
     <div className="min-h-screen bg-background flex">
       <Sidebar />
@@ -123,7 +126,7 @@ const Index = () => {
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 space-y-6">
-              <PersonalTargets />
+              {currentUser.name === "Aminah Rajab" ? <ExecutiveTargets /> : <PersonalTargets />}
               <RecentActivity />
             </div>
             
