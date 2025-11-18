@@ -64,16 +64,6 @@ const CreateIncident = () => {
         </div>
 
         <div className="p-6 max-w-4xl mx-auto">
-          {/* Emergency Notice */}
-          <Card className="p-4 mb-6 bg-destructive/10 border-destructive/20">
-            <div className="flex items-start gap-3">
-              <AlertTriangle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-foreground">
-                <strong>Emergency Notice:</strong> If you think you or someone is having a medical or mental health emergency, call 911 or go to the nearest hospital.
-              </p>
-            </div>
-          </Card>
-
           {/* Incident Reporting Form */}
           <Card className="p-6">
             <h2 className="text-2xl font-bold text-foreground mb-6">Incident Details</h2>
