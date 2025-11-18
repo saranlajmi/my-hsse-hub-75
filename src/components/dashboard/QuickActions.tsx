@@ -11,7 +11,7 @@ const actions = [
 export const QuickActions = () => {
   return (
     <Card className="p-4 bg-transparent border-white/20">
-      <h2 className="text-base font-bold text-sidebar-foreground mb-3">Quick Actions</h2>
+      <h2 className="text-base font-bold text-sidebar-foreground mb-3 text-center">Quick Actions</h2>
       <div className="space-y-2">
         {actions.map((action, index) => (
           <Button
