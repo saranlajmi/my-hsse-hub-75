@@ -39,38 +39,47 @@ const MetricRow = ({ metric }: { metric: MetricItem }) => {
   );
 };
 
-export const ExecutiveTargets = () => {
+interface ExecutiveTargetsProps {
+  showKOC?: boolean;
+  showDirectorate?: boolean;
+}
+
+export const ExecutiveTargets = ({ showKOC = true, showDirectorate = true }: ExecutiveTargetsProps) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
       {/* KOC Targets */}
-      <Card className="p-4">
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
-            <Building2 className="w-4 h-4 text-foreground" />
+      {showKOC && (
+        <Card className="p-4">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
+              <Building2 className="w-4 h-4 text-foreground" />
+            </div>
+            <h3 className="text-base font-semibold text-foreground">KOC Targets</h3>
           </div>
-          <h3 className="text-base font-semibold text-foreground">KOC Targets</h3>
-        </div>
-        <div className="space-y-1">
-          {kocTargets.map((metric, index) => (
-            <MetricRow key={index} metric={metric} />
-          ))}
-        </div>
-      </Card>
+          <div className="space-y-1">
+            {kocTargets.map((metric, index) => (
+              <MetricRow key={index} metric={metric} />
+            ))}
+          </div>
+        </Card>
+      )}
 
       {/* Directorate Targets */}
-      <Card className="p-4">
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
-            <Target className="w-4 h-4 text-foreground" />
+      {showDirectorate && (
+        <Card className="p-4">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
+              <Target className="w-4 h-4 text-foreground" />
+            </div>
+            <h3 className="text-base font-semibold text-foreground">Directorate Targets</h3>
           </div>
-          <h3 className="text-base font-semibold text-foreground">Directorate Targets</h3>
-        </div>
-        <div className="space-y-1">
-          {directorateTargets.map((metric, index) => (
-            <MetricRow key={index} metric={metric} />
-          ))}
-        </div>
-      </Card>
+          <div className="space-y-1">
+            {directorateTargets.map((metric, index) => (
+              <MetricRow key={index} metric={metric} />
+            ))}
+          </div>
+        </Card>
+      )}
     </div>
   );
 };
