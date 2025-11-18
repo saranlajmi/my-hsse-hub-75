@@ -12,6 +12,7 @@ import { Check } from "lucide-react";
 const accounts = [
   { name: "Aminah Rajab", title: "DCEO Gas & Environment", initials: "AR" },
   { name: "Nasser Al-Buhairi", title: "Manager HSE", initials: "NA" },
+  { name: "Sara Al-Ajmi", title: "Safety Engineer HSE Systems Team", initials: "SA" },
 ];
 
 export const UserProfileDropdown = () => {
