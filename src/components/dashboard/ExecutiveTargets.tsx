@@ -45,8 +45,8 @@ export const ExecutiveTargets = () => {
       {/* KOC Targets */}
       <Card className="p-4">
         <div className="flex items-center gap-2 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-            <Building2 className="w-4 h-4 text-primary" />
+          <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
+            <Building2 className="w-4 h-4 text-foreground" />
           </div>
           <h3 className="text-base font-semibold text-foreground">KOC Targets</h3>
         </div>
@@ -60,8 +60,8 @@ export const ExecutiveTargets = () => {
       {/* Directorate Targets */}
       <Card className="p-4">
         <div className="flex items-center gap-2 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-            <Target className="w-4 h-4 text-primary" />
+          <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
+            <Target className="w-4 h-4 text-foreground" />
           </div>
           <h3 className="text-base font-semibold text-foreground">Directorate Targets</h3>
         </div>
