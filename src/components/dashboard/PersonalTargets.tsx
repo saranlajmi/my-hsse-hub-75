@@ -20,8 +20,8 @@ export const PersonalTargets = () => {
   return (
     <Card className="p-6">
       <div className="flex items-center gap-2 mb-6">
-        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-          <Target className="w-5 h-5 text-primary" />
+        <div className="w-10 h-10 rounded-lg bg-foreground/10 flex items-center justify-center">
+          <Target className="w-5 h-5 text-foreground" />
         </div>
         <div>
           <h2 className="text-xl font-bold text-foreground">Personal Targets</h2>
@@ -44,7 +44,7 @@ export const PersonalTargets = () => {
               </div>
               <Progress value={percentage} className="h-2" />
               {isComplete && (
-                <div className="flex items-center gap-1 text-xs text-success">
+                <div className="flex items-center gap-1 text-xs text-foreground">
                   <TrendingUp className="w-3 h-3" />
                   <span>Target achieved!</span>
                 </div>
@@ -58,12 +58,12 @@ export const PersonalTargets = () => {
         <h3 className="text-sm font-semibold text-foreground mb-2">My HSSE Scorecard</h3>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <p className="text-xs text-muted-foreground">On-time completion</p>
-            <p className="text-lg font-bold text-success">92%</p>
-          </div>
-          <div>
-            <p className="text-xs text-muted-foreground">Overdue actions</p>
-            <p className="text-lg font-bold text-warning">2</p>
+              <span className="text-xs text-muted-foreground">On-time completion</span>
+              <p className="text-lg font-bold text-foreground">92%</p>
+            </div>
+            <div>
+              <p className="text-xs text-muted-foreground">Overdue actions</p>
+              <p className="text-lg font-bold text-foreground">2</p>
           </div>
         </div>
       </div>

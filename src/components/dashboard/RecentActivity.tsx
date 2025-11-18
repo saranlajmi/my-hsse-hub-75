@@ -69,7 +69,7 @@ export const RecentActivity = () => {
             <div className="flex-1 space-y-1">
               <p className={`font-medium ${typeColors[activity.type]}`}>{activity.title}</p>
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <Clock className="w-3 h-3" />
+                <Clock className="w-3 h-3 text-foreground" />
                 <span>{activity.timestamp}</span>
                 <span>•</span>
                 <span>{activity.location}</span>
