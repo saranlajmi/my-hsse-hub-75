@@ -12,8 +12,7 @@ interface TargetItem {
 const targets: TargetItem[] = [
   { label: "Actions Completed", current: 12, target: 15, unit: "tasks" },
   { label: "Training Modules", current: 8, target: 10, unit: "modules" },
-  { label: "JSAs Completed", current: 5, target: 8, unit: "JSAs" },
-  { label: "Observations Raised", current: 3, target: 5, unit: "reports" },
+  { label: "Challenges Completed", current: 5, target: 8, unit: "challenges" },
 ];
 
 export const PersonalTargets = () => {
