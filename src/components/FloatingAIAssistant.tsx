@@ -31,16 +31,16 @@ export const FloatingAIAssistant = () => {
       {/* Floating Button */}
       <Button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg bg-foreground hover:bg-foreground/90 z-50"
+        className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg bg-primary hover:bg-primary/90 z-50"
         size="icon"
       >
-        {isOpen ? <X className="w-6 h-6" /> : <Sparkles className="w-6 h-6" />}
+        {isOpen ? <X className="w-6 h-6 text-primary-foreground" /> : <Sparkles className="w-6 h-6 text-primary-foreground" />}
       </Button>
 
       {/* Chat Panel */}
       {isOpen && (
         <Card className="fixed bottom-24 right-6 w-80 shadow-xl z-50 overflow-hidden">
-          <div className="bg-foreground p-4">
+          <div className="bg-primary p-4">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                 <Sparkles className="w-5 h-5 text-white" />
