@@ -10,20 +10,20 @@ const actions = [
 
 export const QuickActions = () => {
   return (
-    <Card className="p-6">
-      <h2 className="text-xl font-bold text-foreground mb-4">Quick Actions</h2>
-      <div className="grid grid-cols-1 gap-3">
+    <Card className="p-4 bg-transparent border-white/20">
+      <h2 className="text-base font-bold text-sidebar-foreground mb-3">Quick Actions</h2>
+      <div className="space-y-2">
         {actions.map((action, index) => (
           <Button
             key={index}
             variant="outline"
-            className="justify-start h-auto py-4 text-left border-sidebar bg-transparent text-foreground hover:bg-sidebar/10"
-            size="lg"
+            className="w-full justify-start h-auto py-3 text-left border-white/20 bg-transparent text-sidebar-foreground hover:bg-white/10"
+            size="sm"
             asChild
           >
             <Link to={action.link}>
-              <action.icon className="w-5 h-5 mr-3 flex-shrink-0" />
-              <span className="font-semibold">{action.label}</span>
+              <action.icon className="w-4 h-4 mr-2 flex-shrink-0" />
+              <span className="text-sm font-medium">{action.label}</span>
             </Link>
           </Button>
         ))}
