@@ -58,6 +58,11 @@ const Index = () => {
             <ExecutiveTargets />
           )}
 
+          {/* Directorate Targets - Only for Nasser Al-Buhairi */}
+          {currentUser.name === "Nasser Al-Buhairi" && (
+            <ExecutiveTargets showKOC={false} showDirectorate={true} />
+          )}
+
           {/* Page Title Section */}
           <div className="space-y-1">
             <h2 className="text-3xl font-bold text-foreground">Overview</h2>
