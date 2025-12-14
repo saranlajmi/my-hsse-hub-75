@@ -35,6 +35,7 @@ export const StatsCard = ({ title, value, icon: Icon, trend, variant = "default"
         </div>
         <div className={cn(
           "w-12 h-12 rounded-lg flex items-center justify-center",
+          "dark:bg-transparent",
           variant === "success" && "bg-success/10",
           variant === "warning" && "bg-warning/10",
           variant === "danger" && "bg-destructive/10",
@@ -42,6 +43,7 @@ export const StatsCard = ({ title, value, icon: Icon, trend, variant = "default"
         )}>
           <Icon className={cn(
             "w-6 h-6",
+            "dark:text-white",
             variant === "success" && "text-success",
             variant === "warning" && "text-warning",
             variant === "danger" && "text-destructive",
