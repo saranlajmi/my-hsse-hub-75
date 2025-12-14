@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { GraduationCap, AlertCircle, Clock, CalendarDays } from "lucide-react";
+import { GraduationCap, AlertCircle, CalendarDays } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const quickActions = [
@@ -12,12 +12,13 @@ export const DashboardQuickActions = () => {
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-bold text-foreground">Quick Actions</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {quickActions.map((action, index) => (
           <Button
             key={index}
             variant="outline"
-            className="h-auto py-4 justify-center gap-2 border-border hover:border-primary hover:text-primary transition-all"
+            className="h-auto py-4 justify-center gap-2 border-border hover:border-primary hover:text-primary hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 animate-fade-in"
+            style={{ animationDelay: `${index * 100}ms` }}
             asChild
           >
             <Link to={action.link}>
