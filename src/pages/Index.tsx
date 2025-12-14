@@ -24,7 +24,7 @@ const Index = () => {
 
         <div className="p-6 space-y-6">
           {/* Performance Indices */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
             <PerformanceIndex 
               title="KOC Excellence Index" 
               value="80%" 

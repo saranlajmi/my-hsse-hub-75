@@ -39,7 +39,7 @@ export const PerformanceIndex = ({ title, value, variant = "primary", isOpen = f
   
   return (
     <Card className={cn(
-      "p-6 border transition-all duration-300",
+      "p-6 border transition-all duration-300 self-start",
       isOpen 
         ? "border-primary/30 bg-primary/5" 
         : "border-border bg-card"
