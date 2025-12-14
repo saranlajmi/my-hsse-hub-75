@@ -5,8 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Search as SearchIcon } from "lucide-react";
 import { useState } from "react";
+import { TopNavBar } from "@/components/TopNavBar";
 
 const moduleTypes = [
   "SOC",
@@ -32,13 +32,7 @@ const EditSearch = () => {
       <Sidebar />
       
       <main className="flex-1 ml-64">
-        {/* Header */}
-        <header className="bg-muted/50 border-b border-border px-6 py-4">
-          <div className="flex items-center gap-2">
-            <SearchIcon className="w-5 h-5 text-muted-foreground" />
-            <h1 className="text-xl font-semibold text-foreground">Edit/Search</h1>
-          </div>
-        </header>
+        <TopNavBar />
 
         {/* Content */}
         <div className="p-6">
