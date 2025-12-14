@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const quickActions = [
   { label: "HSE Induction Center", icon: GraduationCap, link: "/hse-induction/registration" },
-  { label: "Incidents", icon: AlertCircle, link: "/create-new" },
+  { label: "Report Incidents", icon: AlertCircle, link: "/create-new" },
   { label: "HSE Awareness Schedule", icon: CalendarDays, link: "#" },
 ];
 
