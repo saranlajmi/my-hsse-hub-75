@@ -56,13 +56,13 @@ export const MyHSSEPerformance = () => {
               <div className={`p-2 rounded-lg ${item.iconBgColor} transition-transform duration-200 hover:scale-110`}>
                 {item.icon}
               </div>
-              <span className="font-medium text-foreground text-sm">{item.title}</span>
+              <span className="font-medium text-foreground text-sm dark:text-white">{item.title}</span>
             </div>
             <div className="flex items-end justify-between mb-2">
-              <span className={`text-3xl font-bold ${item.value > 0 ? 'text-primary' : 'text-muted-foreground'}`}>
+              <span className={`text-3xl font-bold ${item.value > 0 ? 'text-primary dark:text-white' : 'text-muted-foreground dark:text-white'}`}>
                 {item.value}
               </span>
-              <span className="text-xs text-muted-foreground uppercase">{item.unit}</span>
+              <span className="text-xs text-muted-foreground uppercase dark:text-white">{item.unit}</span>
             </div>
             <div className="h-1.5 bg-muted rounded-full overflow-hidden">
               <div 
