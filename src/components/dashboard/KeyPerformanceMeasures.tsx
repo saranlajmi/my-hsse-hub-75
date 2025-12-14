@@ -43,7 +43,7 @@ const kpmItems: KPMItem[] = [
 export const KeyPerformanceMeasures = () => {
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-bold text-foreground">Key Performance Measures</h2>
+      <h2 className="text-lg font-bold text-foreground">Directorate Key Performance Measures</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {kpmItems.map((item, index) => (
           <Card 
