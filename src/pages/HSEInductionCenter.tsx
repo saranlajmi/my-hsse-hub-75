@@ -1,9 +1,33 @@
 import { Sidebar } from "@/components/Sidebar";
 import { TopNavBar } from "@/components/TopNavBar";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 import { MessageCircle, ClipboardList, Award, Presentation } from "lucide-react";
+import { Link } from "react-router-dom";
 import hsseLogo from "@/assets/hsse-logo-v2.png";
+
+const inductionSections = [
+  {
+    id: "registration",
+    title: "HSE Induction Center Registration",
+    description: "Register for HSE induction sessions and manage your registration details.",
+    icon: ClipboardList,
+    path: "/hse-induction/registration"
+  },
+  {
+    id: "passport",
+    title: "My E-HSE Induction Passport",
+    description: "View and manage your electronic HSE induction passport and completed certifications.",
+    icon: Award,
+    path: "/hse-induction/passport"
+  },
+  {
+    id: "presentations",
+    title: "HSE Induction Center Presentations",
+    description: "Access HSE induction presentation materials and training resources.",
+    icon: Presentation,
+    path: "/hse-induction/presentations"
+  }
+];
 
 const HSEInductionCenter = () => {
   return (
@@ -21,49 +45,25 @@ const HSEInductionCenter = () => {
             </p>
           </div>
 
-          <Tabs defaultValue="registration" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 mb-6">
-              <TabsTrigger value="registration" className="flex items-center gap-2">
-                <ClipboardList className="w-4 h-4" />
-                HSE Induction Center Registration
-              </TabsTrigger>
-              <TabsTrigger value="passport" className="flex items-center gap-2">
-                <Award className="w-4 h-4" />
-                My E-HSE Induction Passport
-              </TabsTrigger>
-              <TabsTrigger value="presentations" className="flex items-center gap-2">
-                <Presentation className="w-4 h-4" />
-                HSE Induction Center Presentations
-              </TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="registration">
-              <Card className="p-6">
-                <h2 className="text-lg font-semibold text-foreground mb-4">HSE Induction Center Registration</h2>
-                <p className="text-muted-foreground">
-                  Register for HSE induction sessions and manage your registration details.
-                </p>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="passport">
-              <Card className="p-6">
-                <h2 className="text-lg font-semibold text-foreground mb-4">My E-HSE Induction Passport</h2>
-                <p className="text-muted-foreground">
-                  View and manage your electronic HSE induction passport and completed certifications.
-                </p>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="presentations">
-              <Card className="p-6">
-                <h2 className="text-lg font-semibold text-foreground mb-4">HSE Induction Center Presentations</h2>
-                <p className="text-muted-foreground">
-                  Access HSE induction presentation materials and training resources.
-                </p>
-              </Card>
-            </TabsContent>
-          </Tabs>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {inductionSections.map((section) => (
+              <Link key={section.id} to={section.path}>
+                <Card className="p-6 h-full hover:shadow-lg hover:border-primary/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer group">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                      <section.icon className="w-8 h-8 text-primary" />
+                    </div>
+                    <h2 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {section.title}
+                    </h2>
+                    <p className="text-sm text-muted-foreground">
+                      {section.description}
+                    </p>
+                  </div>
+                </Card>
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Footer with logo */}
