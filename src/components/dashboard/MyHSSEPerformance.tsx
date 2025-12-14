@@ -17,18 +17,18 @@ const performanceItems: PerformanceItem[] = [
     value: 10,
     unit: "SESSIONS",
     progress: 100,
-    icon: <GraduationCap className="w-5 h-5 text-primary dark:text-white" />,
-    iconBgColor: "bg-primary/10 dark:bg-transparent",
-    progressColor: "bg-primary",
+    icon: <GraduationCap className="w-5 h-5 text-info dark:text-white" />,
+    iconBgColor: "bg-info/10 dark:bg-transparent",
+    progressColor: "bg-info dark:bg-white",
   },
   {
     title: "Traffic Violation",
     value: 0,
     unit: "VIOLATIONS",
     progress: 0,
-    icon: <Car className="w-5 h-5 text-muted-foreground dark:text-white" />,
-    iconBgColor: "bg-muted dark:bg-transparent",
-    progressColor: "bg-muted-foreground",
+    icon: <Car className="w-5 h-5 text-warning dark:text-white" />,
+    iconBgColor: "bg-warning/10 dark:bg-transparent",
+    progressColor: "bg-warning dark:bg-white",
   },
   {
     title: "Leading Indicators",
@@ -37,7 +37,7 @@ const performanceItems: PerformanceItem[] = [
     progress: 100,
     icon: <TrendingUp className="w-5 h-5 text-success dark:text-white" />,
     iconBgColor: "bg-success/10 dark:bg-transparent",
-    progressColor: "bg-success",
+    progressColor: "bg-success dark:bg-white",
   },
 ];
 
