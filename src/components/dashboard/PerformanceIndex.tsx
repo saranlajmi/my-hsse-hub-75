@@ -47,20 +47,20 @@ export const PerformanceIndex = ({ title, value, variant = "primary", isOpen = f
       <Collapsible open={isOpen} onOpenChange={() => onToggle?.()}>
         <div className="flex items-center gap-2 mb-4">
           {isPrimary ? (
-            <LayoutGrid className="w-5 h-5 text-primary" />
+            <LayoutGrid className="w-5 h-5 text-primary dark:text-white" />
           ) : (
-            <Circle className="w-5 h-5 text-primary fill-primary" />
+            <Circle className="w-5 h-5 text-primary dark:text-white fill-primary dark:fill-white" />
           )}
           <span className="font-semibold text-foreground">{title}</span>
         </div>
         
         <CollapsibleTrigger className="w-full">
           <div className="flex items-center justify-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
-            <span className="text-4xl font-bold text-primary">{value}</span>
+            <span className="text-4xl font-bold text-primary dark:text-white">{value}</span>
             {isOpen ? (
-              <ChevronUp className="w-6 h-6 text-primary" />
+              <ChevronUp className="w-6 h-6 text-primary dark:text-white" />
             ) : (
-              <ChevronDown className="w-6 h-6 text-primary" />
+              <ChevronDown className="w-6 h-6 text-primary dark:text-white" />
             )}
           </div>
         </CollapsibleTrigger>
