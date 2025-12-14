@@ -103,14 +103,14 @@ All colors MUST be HSL.
     --input: 215 25% 20%;
     --ring: 210 100% 50%;
 
-    --sidebar-background: 215 30% 10%;
-    --sidebar-foreground: 210 20% 90%;
-    --sidebar-primary: 210 100% 50%;
+    --sidebar-background: 210 60% 28%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 210 60% 40%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 25% 18%;
-    --sidebar-accent-foreground: 210 20% 90%;
-    --sidebar-border: 215 20% 18%;
-    --sidebar-ring: 210 100% 50%;
+    --sidebar-accent: 210 60% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 210 60% 35%;
+    --sidebar-ring: 210 60% 40%;
 
     --success: 150 50% 40%;
     --success-foreground: 0 0% 100%;
