@@ -3,8 +3,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { UserProfileDropdown } from "@/components/UserProfileDropdown";
 import { FileText, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTheme } from "next-themes";
 
 export const TopNavBar = () => {
+  const { theme, setTheme } = useTheme();
+
   return (
     <div className="bg-sidebar border-b border-sidebar-border px-6 py-3 flex items-center justify-between sticky top-0 z-10">
       <div className="flex-1" />
@@ -26,11 +29,11 @@ export const TopNavBar = () => {
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <span className="text-sm text-sidebar-foreground/80">Theme:</span>
-            <Select defaultValue="light">
+            <Select value={theme} onValueChange={setTheme}>
               <SelectTrigger className="w-24 h-8 text-sm bg-sidebar-accent border-sidebar-border text-sidebar-foreground">
                 <SelectValue placeholder="Theme" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-popover border-border">
                 <SelectItem value="light">Light</SelectItem>
                 <SelectItem value="dark">Dark</SelectItem>
               </SelectContent>
