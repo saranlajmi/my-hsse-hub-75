@@ -6,7 +6,7 @@ import { DashboardQuickActions } from "@/components/dashboard/DashboardQuickActi
 import { TopNavBar } from "@/components/TopNavBar";
 import { MessageCircle } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/logo.png";
+import hsseLogo from "@/assets/hsse-logo.png";
 
 const Index = () => {
   const [openCard, setOpenCard] = useState<"koc" | "directorate" | null>(null);
@@ -54,14 +54,14 @@ const Index = () => {
         {/* Footer with logo */}
         <div className="px-6 py-4">
           <img 
-            src={logo} 
-            alt="KOC Logo" 
+            src={hsseLogo} 
+            alt="HSSE Logo" 
             className="w-16 h-16 object-contain opacity-60"
           />
         </div>
 
         {/* Floating chat button */}
-        <button className="fixed bottom-6 right-6 w-14 h-14 bg-primary text-primary-foreground rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
+        <button className="fixed bottom-6 right-6 w-14 h-14 bg-primary text-primary-foreground rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90 hover:scale-110 hover:shadow-xl active:scale-95 transition-all duration-200">
           <MessageCircle className="w-6 h-6" />
         </button>
       </main>

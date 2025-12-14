@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui/card";
 import { GraduationCap, Car, TrendingUp } from "lucide-react";
-import { Progress } from "@/components/ui/progress";
 
 interface PerformanceItem {
   title: string;
@@ -48,9 +47,13 @@ export const MyHSSEPerformance = () => {
       <h2 className="text-lg font-bold text-foreground">My HSSE Performance</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {performanceItems.map((item, index) => (
-          <Card key={index} className="p-4 bg-card border border-border">
+          <Card 
+            key={index} 
+            className="p-4 bg-card border border-border hover:shadow-md hover:border-primary/30 transition-all duration-300 animate-fade-in"
+            style={{ animationDelay: `${index * 100}ms` }}
+          >
             <div className="flex items-center gap-3 mb-4">
-              <div className={`p-2 rounded-lg ${item.iconBgColor}`}>
+              <div className={`p-2 rounded-lg ${item.iconBgColor} transition-transform duration-200 hover:scale-110`}>
                 {item.icon}
               </div>
               <span className="font-medium text-foreground text-sm">{item.title}</span>
@@ -61,9 +64,9 @@ export const MyHSSEPerformance = () => {
               </span>
               <span className="text-xs text-muted-foreground uppercase">{item.unit}</span>
             </div>
-            <div className="h-1 bg-muted rounded-full overflow-hidden">
+            <div className="h-1.5 bg-muted rounded-full overflow-hidden">
               <div 
-                className={`h-full ${item.progressColor} rounded-full transition-all duration-300`}
+                className={`h-full ${item.progressColor} rounded-full transition-all duration-500 ease-out`}
                 style={{ width: `${item.progress}%` }}
               />
             </div>

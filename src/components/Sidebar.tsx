@@ -14,19 +14,24 @@ export const Sidebar = () => {
     <aside className="fixed left-0 top-0 h-screen w-52 bg-sidebar border-r border-sidebar-border flex flex-col">
       {/* Header with logo */}
       <div className="px-4 py-4 border-b border-sidebar-border flex items-center justify-center">
-        <img src={hsseLogo} alt="HSSE Logo" className="h-20 w-auto object-contain" />
+        <img 
+          src={hsseLogo} 
+          alt="HSSE Logo" 
+          className="h-20 w-auto object-contain transition-transform duration-200 hover:scale-105" 
+        />
       </div>
       
       <nav className="flex-1 p-3 space-y-1">
-        {navItems.map((item) => (
+        {navItems.map((item, index) => (
           <NavLink
             key={item.path}
             to={item.path}
             className={cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200",
-              "text-sidebar-foreground/80 hover:text-sidebar-foreground hover:bg-sidebar-accent"
+              "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 animate-fade-in",
+              "text-sidebar-foreground/80 hover:text-sidebar-foreground hover:bg-sidebar-accent hover:translate-x-1"
             )}
             activeClassName="bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
+            style={{ animationDelay: `${index * 50}ms` }}
           >
             <item.icon className="w-5 h-5" />
             <span className="font-medium text-sm">{item.title}</span>
@@ -40,7 +45,7 @@ export const Sidebar = () => {
           <img 
             src={hsseLogo} 
             alt="HSSE Logo" 
-            className="w-16 h-16 object-contain"
+            className="w-16 h-16 object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
           />
         </div>
       </div>

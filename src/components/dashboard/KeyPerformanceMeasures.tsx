@@ -46,14 +46,18 @@ export const KeyPerformanceMeasures = () => {
       <h2 className="text-lg font-bold text-foreground">Key Performance Measures</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {kpmItems.map((item, index) => (
-          <Card key={index} className="p-4 bg-card border border-border relative">
+          <Card 
+            key={index} 
+            className="p-4 bg-card border border-border relative hover:shadow-md hover:border-primary/30 transition-all duration-300 animate-fade-in"
+            style={{ animationDelay: `${index * 100}ms` }}
+          >
             <div className="flex items-start justify-between">
               <div className="space-y-1">
                 <p className="text-sm text-muted-foreground">{item.label}</p>
                 <p className="text-3xl font-bold text-foreground">{item.value}</p>
                 <p className="text-xs text-muted-foreground">Actual</p>
               </div>
-              <div className={`p-2 rounded-full ${item.iconBgColor}`}>
+              <div className={`p-2 rounded-full ${item.iconBgColor} transition-transform duration-200 hover:scale-110`}>
                 {item.icon}
               </div>
             </div>
