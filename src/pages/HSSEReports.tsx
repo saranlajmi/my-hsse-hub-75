@@ -85,7 +85,7 @@ const ReportCategoryCard = ({
 }) => {
   return (
     <Card className={cn(
-      "p-4 border transition-all duration-300",
+      "p-4 border transition-all duration-300 self-start",
       isOpen 
         ? "border-primary/30 bg-primary/5" 
         : "border-border bg-card"
@@ -147,7 +147,7 @@ const HSSEReports = () => {
             <p className="text-muted-foreground">Click on any category to view available reports and drill-down options.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
             {reportCategories.map((category) => (
               <ReportCategoryCard 
                 key={category.id} 
