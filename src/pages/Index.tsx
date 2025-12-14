@@ -1,143 +1,92 @@
 import { Sidebar } from "@/components/Sidebar";
-import { StatsCard } from "@/components/dashboard/StatsCard";
-import { PersonalTargets } from "@/components/dashboard/PersonalTargets";
-import { ExecutiveTargets } from "@/components/dashboard/ExecutiveTargets";
-import { QuickActions } from "@/components/dashboard/QuickActions";
-import { RecentActivity } from "@/components/dashboard/RecentActivity";
-import { AlertTriangle, CheckCircle2, Clock, TrendingUp, TrendingDown, Users } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Link } from "react-router-dom";
+import { PerformanceIndex } from "@/components/dashboard/PerformanceIndex";
+import { KeyPerformanceMeasures } from "@/components/dashboard/KeyPerformanceMeasures";
+import { MyHSSEPerformance } from "@/components/dashboard/MyHSSEPerformance";
+import { DashboardQuickActions } from "@/components/dashboard/DashboardQuickActions";
 import { UserProfileDropdown } from "@/components/UserProfileDropdown";
-import { useUser } from "@/contexts/UserContext";
+import { Button } from "@/components/ui/button";
+import { FileText, GraduationCap, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import logo from "@/assets/logo.png";
 
 const Index = () => {
-  const { currentUser } = useUser();
   return (
-    <div className="min-h-screen bg-background flex">
+    <div className="min-h-screen bg-muted/30 flex">
       <Sidebar />
       
-      <main className="flex-1 ml-64">
-        {/* Header Bar with HSSE Links */}
-        <div className="bg-sidebar border-b border-sidebar-border px-6 py-2">
-          <div className="flex items-center justify-center gap-2">
-            <Button variant="ghost" size="sm" className="text-sidebar-foreground hover:bg-sidebar-accent" asChild>
-              <Link to="/hsse-reports">HSSE Reports</Link>
-            </Button>
-            <Button variant="ghost" size="sm" className="text-sidebar-foreground hover:bg-sidebar-accent" asChild>
-              <Link to="/tutorials">HSSE Tutorials</Link>
-            </Button>
-            <Button variant="ghost" size="sm" className="text-sidebar-foreground hover:bg-sidebar-accent" asChild>
-              <Link to="/hsse-procedures">HSSE Procedures</Link>
-            </Button>
-          </div>
-        </div>
-
+      <main className="flex-1 ml-52">
         {/* Top Navigation Bar */}
-        <div className="bg-sidebar border-b border-sidebar-border px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <h1 className="text-2xl font-bold text-sidebar-foreground">Dashboard</h1>
-          </div>
-          <div className="flex items-center gap-3">
-            <Input 
-              placeholder="Search..." 
-              className="w-64 bg-sidebar-accent border-sidebar-border text-sidebar-foreground placeholder:text-sidebar-foreground/60"
-            />
-            <Button variant="outline" size="sm" className="bg-transparent border-white text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-foreground">
-              Feedback
+        <div className="bg-background border-b border-border px-6 py-3 flex items-center justify-between sticky top-0 z-10">
+          <div className="flex items-center gap-6">
+            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground gap-2" asChild>
+              <Link to="/hsse-reports">
+                <FileText className="w-4 h-4" />
+                HSSE Reports
+              </Link>
             </Button>
+            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground gap-2" asChild>
+              <Link to="/hse-induction/registration">
+                <GraduationCap className="w-4 h-4" />
+                HSE Induction Center
+              </Link>
+            </Button>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-muted-foreground">Theme:</span>
+              <Select defaultValue="light">
+                <SelectTrigger className="w-24 h-8 text-sm">
+                  <SelectValue placeholder="Theme" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="light">Light</SelectItem>
+                  <SelectItem value="dark">Dark</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
             <UserProfileDropdown />
           </div>
         </div>
 
         <div className="p-6 space-y-6">
-          {/* Executive Targets - Only for Aminah Rajab */}
-          {currentUser.name === "Aminah Rajab" && (
-            <ExecutiveTargets />
-          )}
-
-          {/* Directorate Targets - Only for Nasser Al-Buhairi */}
-          {currentUser.name === "Nasser Al-Buhairi" && (
-            <ExecutiveTargets showKOC={false} showDirectorate={true} />
-          )}
-
-          {/* Page Title Section */}
-          <div className="space-y-1">
-            <h2 className="text-3xl font-bold text-foreground">Overview</h2>
-            <p className="text-muted-foreground text-sm">More information about your HSSE performance</p>
-          </div>
-
-          {/* Stats Grid - 3 columns matching reference */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="p-6 space-y-4 bg-card border border-border hover:shadow-lg transition-shadow">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-muted-foreground font-medium">Days Since Last Injury</p>
-                  <p className="text-4xl font-bold text-foreground mt-2">127</p>
-                  <p className="text-xs text-muted-foreground mt-1">Updated: {new Date().toLocaleDateString()}</p>
-                </div>
-                <div className="text-foreground bg-foreground/10 p-3 rounded-lg">
-                  <TrendingUp className="w-6 h-6" />
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 text-success">
-                  <TrendingUp className="w-4 h-4" />
-                  <span className="text-sm font-medium">+15 days</span>
-                </div>
-                <span className="text-xs text-muted-foreground">from last quarter</span>
-              </div>
-            </Card>
-
-            <Card className="p-6 space-y-4 bg-card border border-border hover:shadow-lg transition-shadow">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-muted-foreground font-medium">Open Incidents</p>
-                  <p className="text-4xl font-bold text-foreground mt-2">8</p>
-                  <p className="text-xs text-muted-foreground mt-1">Updated: {new Date().toLocaleDateString()}</p>
-                </div>
-                <div className="text-foreground bg-foreground/10 p-3 rounded-lg">
-                  <AlertTriangle className="w-6 h-6" />
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 text-destructive">
-                  <TrendingDown className="w-4 h-4" />
-                  <span className="text-sm font-medium">-2</span>
-                </div>
-                <span className="text-xs text-muted-foreground">from last week</span>
-              </div>
-            </Card>
-
-            <Card className="p-6 space-y-4 bg-card border border-border hover:shadow-lg transition-shadow">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-muted-foreground font-medium">Safety Score</p>
-                  <p className="text-4xl font-bold text-foreground mt-2">94%</p>
-                  <p className="text-xs text-muted-foreground mt-1">Updated: {new Date().toLocaleDateString()}</p>
-                </div>
-                <div className="text-foreground bg-foreground/10 p-3 rounded-lg">
-                  <CheckCircle2 className="w-6 h-6" />
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 text-success">
-                  <TrendingUp className="w-4 h-4" />
-                  <span className="text-sm font-medium">+3%</span>
-                </div>
-                <span className="text-xs text-muted-foreground">this month</span>
-              </div>
-            </Card>
-          </div>
-
-          {/* Main Content Grid */}
+          {/* Performance Indices */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <PersonalTargets />
-            <RecentActivity />
+            <PerformanceIndex 
+              title="KOC HSE Performance Index" 
+              value="80%" 
+              variant="primary"
+            />
+            <PerformanceIndex 
+              title="Directorate HSE Performance Index" 
+              value="76%" 
+              variant="secondary"
+            />
           </div>
+
+          {/* Key Performance Measures */}
+          <KeyPerformanceMeasures />
+
+          {/* My HSSE Performance */}
+          <MyHSSEPerformance />
+
+          {/* Quick Actions */}
+          <DashboardQuickActions />
         </div>
+
+        {/* Footer with logo */}
+        <div className="px-6 py-4">
+          <img 
+            src={logo} 
+            alt="KOC Logo" 
+            className="w-16 h-16 object-contain opacity-60"
+          />
+        </div>
+
+        {/* Floating chat button */}
+        <button className="fixed bottom-6 right-6 w-14 h-14 bg-primary text-primary-foreground rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
+          <MessageCircle className="w-6 h-6" />
+        </button>
       </main>
     </div>
   );
