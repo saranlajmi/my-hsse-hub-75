@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 
 export const TopNavBar = () => {
   return (
-    <div className="bg-background border-b border-border px-6 py-3 flex items-center justify-between sticky top-0 z-10">
+    <div className="bg-sidebar border-b border-sidebar-border px-6 py-3 flex items-center justify-between sticky top-0 z-10">
       <div className="flex-1" />
       <div className="flex items-center gap-6">
-        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground gap-2" asChild>
+        <Button variant="ghost" size="sm" className="text-sidebar-foreground/80 hover:text-sidebar-foreground hover:bg-sidebar-accent gap-2" asChild>
           <Link to="/hsse-reports">
             <FileText className="w-4 h-4" />
             HSSE Reports
           </Link>
         </Button>
-        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground gap-2" asChild>
+        <Button variant="ghost" size="sm" className="text-sidebar-foreground/80 hover:text-sidebar-foreground hover:bg-sidebar-accent gap-2" asChild>
           <Link to="/hse-induction/registration">
             <GraduationCap className="w-4 h-4" />
             HSE Induction Center
@@ -25,9 +25,9 @@ export const TopNavBar = () => {
       <div className="flex-1 flex justify-end">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
-            <span className="text-sm text-muted-foreground">Theme:</span>
+            <span className="text-sm text-sidebar-foreground/80">Theme:</span>
             <Select defaultValue="light">
-              <SelectTrigger className="w-24 h-8 text-sm">
+              <SelectTrigger className="w-24 h-8 text-sm bg-sidebar-accent border-sidebar-border text-sidebar-foreground">
                 <SelectValue placeholder="Theme" />
               </SelectTrigger>
               <SelectContent>
