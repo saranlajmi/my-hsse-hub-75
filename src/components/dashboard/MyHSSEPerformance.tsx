@@ -64,9 +64,9 @@ export const MyHSSEPerformance = () => {
               </span>
               <span className="text-xs text-muted-foreground uppercase dark:text-white">{item.unit}</span>
             </div>
-            <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+            <div className="h-1.5 bg-muted rounded-full overflow-hidden dark:bg-white/20">
               <div 
-                className={`h-full ${item.progressColor} rounded-full transition-all duration-500 ease-out`}
+                className={`h-full ${item.progressColor} dark:bg-white rounded-full transition-all duration-500 ease-out`}
                 style={{ width: `${item.progress}%` }}
               />
             </div>
