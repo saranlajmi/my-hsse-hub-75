@@ -17,7 +17,7 @@ export const DashboardQuickActions = () => {
           <Button
             key={index}
             variant="outline"
-            className="h-auto py-4 justify-center gap-2 border-border hover:border-primary hover:text-primary hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 animate-fade-in"
+            className="h-auto py-4 justify-center gap-2 border-border hover:bg-primary hover:border-primary hover:text-white hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 animate-fade-in"
             style={{ animationDelay: `${index * 100}ms` }}
             asChild
           >
