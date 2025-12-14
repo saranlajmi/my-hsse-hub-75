@@ -10,6 +10,7 @@ import CreateIncident from "./pages/CreateIncident";
 import EditSearch from "./pages/EditSearch";
 import HSSETutorials from "./pages/HSSETutorials";
 import HSSEProcedures from "./pages/HSSEProcedures";
+import HSEInductionCenter from "./pages/HSEInductionCenter";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
         <Route path="/edit-search" element={<EditSearch />} />
         <Route path="/tutorials" element={<HSSETutorials />} />
         <Route path="/hsse-procedures" element={<HSSEProcedures />} />
+        <Route path="/hse-induction/registration" element={<HSEInductionCenter />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
