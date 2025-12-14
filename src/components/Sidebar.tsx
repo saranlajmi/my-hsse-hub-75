@@ -1,7 +1,7 @@
 import { LayoutDashboard, PlusCircle, Search } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { cn } from "@/lib/utils";
-import hsseLogo from "@/assets/hsse-logo-new.png";
+import hsseLogo from "@/assets/hsse-logo-v2.png";
 
 const navItems = [
   { title: "Dashboard", icon: LayoutDashboard, path: "/" },

@@ -6,7 +6,7 @@ import { DashboardQuickActions } from "@/components/dashboard/DashboardQuickActi
 import { TopNavBar } from "@/components/TopNavBar";
 import { MessageCircle } from "lucide-react";
 import { useState } from "react";
-import hsseLogo from "@/assets/hsse-logo-new.png";
+import hsseLogo from "@/assets/hsse-logo-v2.png";
 
 const Index = () => {
   const [openCard, setOpenCard] = useState<"koc" | "directorate" | null>(null);
