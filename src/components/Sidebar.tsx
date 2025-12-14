@@ -39,14 +39,12 @@ export const Sidebar = () => {
         ))}
       </nav>
       
-      {/* Logo at bottom */}
+      {/* Company name at bottom */}
       <div className="p-3 border-t border-sidebar-border">
         <div className="flex justify-center">
-          <img 
-            src={hsseLogo} 
-            alt="HSSE Logo" 
-            className="w-20 h-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
-          />
+          <span className="text-xs font-medium text-sidebar-foreground/60 hover:text-sidebar-foreground transition-colors duration-200">
+            Kuwait Oil Company
+          </span>
         </div>
       </div>
     </aside>
