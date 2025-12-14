@@ -17,7 +17,7 @@ export const Sidebar = () => {
         <button className="p-1 hover:bg-sidebar-accent rounded">
           <Menu className="w-5 h-5 text-sidebar-foreground" />
         </button>
-        <img src={hsseLogo} alt="HSSE Logo" className="h-8 object-contain" />
+        <img src={hsseLogo} alt="HSSE Logo" className="h-12 w-auto object-contain" />
       </div>
       
       <nav className="flex-1 p-3 space-y-1">
