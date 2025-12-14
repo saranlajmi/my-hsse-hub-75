@@ -17,8 +17,8 @@ const performanceItems: PerformanceItem[] = [
     value: 10,
     unit: "SESSIONS",
     progress: 100,
-    icon: <GraduationCap className="w-5 h-5 text-primary" />,
-    iconBgColor: "bg-primary/10 dark:bg-primary/20",
+    icon: <GraduationCap className="w-5 h-5 text-primary dark:text-white" />,
+    iconBgColor: "bg-primary/10 dark:bg-transparent",
     progressColor: "bg-primary",
   },
   {
@@ -26,8 +26,8 @@ const performanceItems: PerformanceItem[] = [
     value: 0,
     unit: "VIOLATIONS",
     progress: 0,
-    icon: <Car className="w-5 h-5 text-muted-foreground" />,
-    iconBgColor: "bg-muted dark:bg-muted-foreground/20",
+    icon: <Car className="w-5 h-5 text-muted-foreground dark:text-white" />,
+    iconBgColor: "bg-muted dark:bg-transparent",
     progressColor: "bg-muted-foreground",
   },
   {
@@ -35,8 +35,8 @@ const performanceItems: PerformanceItem[] = [
     value: 10,
     unit: "INDICATORS",
     progress: 100,
-    icon: <TrendingUp className="w-5 h-5 text-success" />,
-    iconBgColor: "bg-success/10 dark:bg-success/20",
+    icon: <TrendingUp className="w-5 h-5 text-success dark:text-white" />,
+    iconBgColor: "bg-success/10 dark:bg-transparent",
     progressColor: "bg-success",
   },
 ];
@@ -64,9 +64,9 @@ export const MyHSSEPerformance = () => {
               </span>
               <span className="text-xs text-muted-foreground uppercase dark:text-white">{item.unit}</span>
             </div>
-            <div className="h-1.5 bg-muted rounded-full overflow-hidden dark:bg-muted-foreground/20">
+            <div className="h-1.5 bg-muted rounded-full overflow-hidden dark:bg-white/20">
               <div 
-                className={`h-full ${item.progressColor} rounded-full transition-all duration-500 ease-out`}
+                className={`h-full ${item.progressColor} dark:bg-white rounded-full transition-all duration-500 ease-out`}
                 style={{ width: `${item.progress}%` }}
               />
             </div>
