@@ -5,9 +5,16 @@ import { MyHSSEPerformance } from "@/components/dashboard/MyHSSEPerformance";
 import { DashboardQuickActions } from "@/components/dashboard/DashboardQuickActions";
 import { TopNavBar } from "@/components/TopNavBar";
 import { MessageCircle } from "lucide-react";
+import { useState } from "react";
 import logo from "@/assets/logo.png";
 
 const Index = () => {
+  const [openCard, setOpenCard] = useState<"koc" | "directorate" | null>(null);
+
+  const handleToggle = (card: "koc" | "directorate") => {
+    setOpenCard(openCard === card ? null : card);
+  };
+
   return (
     <div className="min-h-screen bg-muted/30 flex">
       <Sidebar />
@@ -22,11 +29,15 @@ const Index = () => {
               title="KOC Excellence Index" 
               value="80%" 
               variant="primary"
+              isOpen={openCard === "koc"}
+              onToggle={() => handleToggle("koc")}
             />
             <PerformanceIndex 
               title="Directorate Excellence Index" 
               value="76%" 
               variant="secondary"
+              isOpen={openCard === "directorate"}
+              onToggle={() => handleToggle("directorate")}
             />
           </div>
 
