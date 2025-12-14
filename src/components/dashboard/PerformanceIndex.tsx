@@ -39,8 +39,10 @@ export const PerformanceIndex = ({ title, value, variant = "primary" }: Performa
   
   return (
     <Card className={cn(
-      "p-6 border-2 transition-all duration-300",
-      isPrimary ? "border-primary/30 bg-primary/5" : "border-muted bg-card"
+      "p-6 border transition-all duration-300",
+      isOpen 
+        ? "border-primary/30 bg-primary/5" 
+        : "border-border bg-card"
     )}>
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <div className="flex items-center gap-2 mb-4">
