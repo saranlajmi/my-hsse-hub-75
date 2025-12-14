@@ -126,7 +126,7 @@ const HSSEReports = () => {
     <div className="min-h-screen bg-background flex">
       <Sidebar />
       
-      <main className="flex-1 ml-64">
+      <main className="flex-1 ml-52">
         <TopNavBar />
 
         <div className="p-6">
