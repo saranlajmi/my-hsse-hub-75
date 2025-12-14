@@ -74,9 +74,15 @@ const reportCategories: ReportCategory[] = [
   }
 ];
 
-const ReportCategoryCard = ({ category }: { category: ReportCategory }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const ReportCategoryCard = ({ 
+  category, 
+  isOpen, 
+  onToggle 
+}: { 
+  category: ReportCategory; 
+  isOpen: boolean; 
+  onToggle: () => void;
+}) => {
   return (
     <Card className={cn(
       "p-4 border transition-all duration-300",
@@ -84,7 +90,7 @@ const ReportCategoryCard = ({ category }: { category: ReportCategory }) => {
         ? "border-primary/30 bg-primary/5" 
         : "border-border bg-card"
     )}>
-      <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+      <Collapsible open={isOpen} onOpenChange={onToggle}>
         <CollapsibleTrigger className="w-full">
           <div className="flex items-center justify-between cursor-pointer">
             <div className="flex items-center gap-3">
@@ -122,6 +128,12 @@ const ReportCategoryCard = ({ category }: { category: ReportCategory }) => {
 };
 
 const HSSEReports = () => {
+  const [openCategoryId, setOpenCategoryId] = useState<string | null>(null);
+
+  const handleToggle = (categoryId: string) => {
+    setOpenCategoryId(openCategoryId === categoryId ? null : categoryId);
+  };
+
   return (
     <div className="min-h-screen bg-background flex">
       <Sidebar />
@@ -137,7 +149,12 @@ const HSSEReports = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {reportCategories.map((category) => (
-              <ReportCategoryCard key={category.id} category={category} />
+              <ReportCategoryCard 
+                key={category.id} 
+                category={category}
+                isOpen={openCategoryId === category.id}
+                onToggle={() => handleToggle(category.id)}
+              />
             ))}
           </div>
         </div>
