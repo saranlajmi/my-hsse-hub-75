@@ -23,7 +23,7 @@ const performanceItems: PerformanceItem[] = [
   },
   {
     title: "Traffic Violation",
-    value: 0,
+    value: 1,
     unit: "VIOLATIONS",
     progress: 0,
     icon: <Car className="w-5 h-5 text-warning dark:text-white" />,
