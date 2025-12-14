@@ -1,7 +1,7 @@
 import { LayoutDashboard, PlusCircle, Search } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { cn } from "@/lib/utils";
-import hsseLogo from "@/assets/hsse-logo.png";
+import hsseLogo from "@/assets/hsse-logo-new.png";
 
 const navItems = [
   { title: "Dashboard", icon: LayoutDashboard, path: "/" },
@@ -13,11 +13,11 @@ export const Sidebar = () => {
   return (
     <aside className="fixed left-0 top-0 h-screen w-52 bg-sidebar border-r border-sidebar-border flex flex-col">
       {/* Header with logo */}
-      <div className="px-4 py-4 border-b border-sidebar-border flex items-center justify-center">
+      <div className="px-2 py-6 border-b border-sidebar-border flex items-center justify-center">
         <img 
           src={hsseLogo} 
           alt="HSSE Logo" 
-          className="h-20 w-auto object-contain transition-transform duration-200 hover:scale-105" 
+          className="w-full max-w-[180px] h-auto object-contain transition-transform duration-200 hover:scale-105" 
         />
       </div>
       
@@ -40,12 +40,12 @@ export const Sidebar = () => {
       </nav>
       
       {/* Logo at bottom */}
-      <div className="p-4 border-t border-sidebar-border">
+      <div className="p-3 border-t border-sidebar-border">
         <div className="flex justify-center">
           <img 
             src={hsseLogo} 
             alt="HSSE Logo" 
-            className="w-16 h-16 object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
+            className="w-20 h-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
           />
         </div>
       </div>
