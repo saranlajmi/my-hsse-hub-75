@@ -1,7 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { LayoutGrid, Circle, ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 interface MetricRow {
@@ -16,6 +15,8 @@ interface PerformanceIndexProps {
   value: string;
   variant?: "primary" | "secondary";
   metrics?: MetricRow[];
+  isOpen?: boolean;
+  onToggle?: () => void;
 }
 
 const kocMetrics: MetricRow[] = [
@@ -32,8 +33,7 @@ const directorateMetrics: MetricRow[] = [
   { label: "Env. Incidents", target: 0, actual: 0, perfIndex: "0.00" },
 ];
 
-export const PerformanceIndex = ({ title, value, variant = "primary" }: PerformanceIndexProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+export const PerformanceIndex = ({ title, value, variant = "primary", isOpen = false, onToggle }: PerformanceIndexProps) => {
   const isPrimary = variant === "primary";
   const metrics = isPrimary ? kocMetrics : directorateMetrics;
   
@@ -44,7 +44,7 @@ export const PerformanceIndex = ({ title, value, variant = "primary" }: Performa
         ? "border-primary/30 bg-primary/5" 
         : "border-border bg-card"
     )}>
-      <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+      <Collapsible open={isOpen} onOpenChange={onToggle}>
         <div className="flex items-center gap-2 mb-4">
           {isPrimary ? (
             <LayoutGrid className="w-5 h-5 text-primary" />
