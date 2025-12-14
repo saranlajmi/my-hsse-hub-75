@@ -1,16 +1,7 @@
-import { LayoutDashboard, PlusCircle, Search, ClipboardCheck, GraduationCap, BarChart3, BookOpen, Settings, ChevronDown, ChevronRight } from "lucide-react";
+import { LayoutDashboard, PlusCircle, Search, Menu } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { QuickActions } from "@/components/dashboard/QuickActions";
-import { useState } from "react";
-
-const topBarItems = [
-  { title: "HSSE Reports", icon: BarChart3, path: "/hsse-reports" },
-  { title: "Tutorials", icon: BookOpen, path: "/tutorials" },
-  { title: "HSSE Procedures", icon: BookOpen, path: "/hsse-procedures" },
-];
 
 const navItems = [
   { title: "Dashboard", icon: LayoutDashboard, path: "/" },
@@ -18,148 +9,45 @@ const navItems = [
   { title: "Edit/Search", icon: Search, path: "/edit-search" },
 ];
 
-const actionTrackingItems = [
-  { title: "Upload Recommendations", path: "/action-tracking/upload" },
-  { title: "Create Actions", path: "/action-tracking/create", isSubItem: true },
-  { title: "Update/ Close Actions", path: "/action-tracking/update", isSubItem: true },
-  { title: "Status of Incidents Recomms.", path: "/action-tracking/status" },
-  { title: "Report of Action Status", path: "/action-tracking/report" },
-  { title: "ATS Help Files", path: "/action-tracking/help" },
-];
-
-const hseInductionItems = [
-  { title: "Registration (Employees)", path: "/hse-induction/registration" },
-  { title: "Contact US", path: "/hse-induction/contact" },
-  { title: "Awareness Presentation(PDF File)", path: "/hse-induction/awareness" },
-  { title: "E-Passport", path: "/hse-induction/e-passport" },
-];
-
 export const Sidebar = () => {
-  const [isActionTrackingOpen, setIsActionTrackingOpen] = useState(false);
-  const [isHSEInductionOpen, setIsHSEInductionOpen] = useState(false);
-
   return (
-    <aside className="fixed left-0 top-0 h-screen w-64 bg-sidebar border-r border-sidebar-border flex flex-col">
-      {/* Logo/Branding */}
-      <div className="px-6 py-8 border-b border-sidebar-border">
-        <div className="flex flex-col items-center justify-center">
-          <img 
-            src={logo} 
-            alt="Company Logo" 
-            className="w-full max-w-[180px] object-contain"
-          />
+    <aside className="fixed left-0 top-0 h-screen w-52 bg-background border-r border-border flex flex-col">
+      {/* Header with hamburger and branding */}
+      <div className="px-4 py-4 border-b border-border flex items-center gap-3">
+        <button className="p-1 hover:bg-muted rounded">
+          <Menu className="w-5 h-5 text-foreground" />
+        </button>
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 bg-gradient-to-br from-green-400 via-blue-500 to-orange-400 rounded" />
+          <span className="font-semibold text-foreground">HSSE Digital Portal</span>
         </div>
       </div>
       
-      <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
+      <nav className="flex-1 p-3 space-y-1">
         {navItems.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}
             className={cn(
-              "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200",
-              "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent"
+              "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200",
+              "text-muted-foreground hover:text-foreground hover:bg-muted"
             )}
-            activeClassName="bg-white text-sidebar hover:bg-white hover:text-sidebar"
+            activeClassName="bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
           >
             <item.icon className="w-5 h-5" />
-            <span className="font-medium">{item.title}</span>
+            <span className="font-medium text-sm">{item.title}</span>
           </NavLink>
         ))}
-
-        {/* Action Tracking System with collapsible sub-items */}
-        <Collapsible open={isActionTrackingOpen} onOpenChange={setIsActionTrackingOpen}>
-          <CollapsibleTrigger
-            className={cn(
-              "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 w-full",
-              "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent"
-            )}
-          >
-            <ClipboardCheck className="w-5 h-5" />
-            <span className="font-medium flex-1 text-left">Action Tracking System</span>
-            {isActionTrackingOpen ? (
-              <ChevronDown className="w-4 h-4" />
-            ) : (
-              <ChevronRight className="w-4 h-4" />
-            )}
-          </CollapsibleTrigger>
-          <CollapsibleContent className="space-y-1 mt-1">
-            {actionTrackingItems.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                className={cn(
-                  "flex items-center gap-3 py-2 rounded-lg transition-all duration-200",
-                  "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent",
-                  item.isSubItem ? "pl-12 pr-4" : "pl-8 pr-4"
-                )}
-                activeClassName="bg-white text-sidebar"
-              >
-                {item.isSubItem && <ChevronRight className="w-3 h-3" />}
-                <span className="text-sm">{item.title}</span>
-              </NavLink>
-            ))}
-          </CollapsibleContent>
-        </Collapsible>
-
-        {/* HSE Induction Center with collapsible sub-items */}
-        <Collapsible open={isHSEInductionOpen} onOpenChange={setIsHSEInductionOpen}>
-          <CollapsibleTrigger
-            className={cn(
-              "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 w-full",
-              "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent"
-            )}
-          >
-            <GraduationCap className="w-5 h-5" />
-            <span className="font-medium flex-1 text-left">HSE Induction Center</span>
-            {isHSEInductionOpen ? (
-              <ChevronDown className="w-4 h-4" />
-            ) : (
-              <ChevronRight className="w-4 h-4" />
-            )}
-          </CollapsibleTrigger>
-          <CollapsibleContent className="space-y-1 mt-1">
-            {hseInductionItems.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                className={cn(
-                  "flex items-center gap-3 py-2 rounded-lg transition-all duration-200",
-                  "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent",
-                  "pl-8 pr-4"
-                )}
-                activeClassName="bg-white text-sidebar"
-              >
-                <span className="text-sm">{item.title}</span>
-              </NavLink>
-            ))}
-          </CollapsibleContent>
-        </Collapsible>
-
-        {/* Admin */}
-        <NavLink
-          to="/admin"
-          className={cn(
-            "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200",
-            "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent"
-          )}
-          activeClassName="bg-white text-sidebar hover:bg-white hover:text-sidebar"
-        >
-          <Settings className="w-5 h-5" />
-          <span className="font-medium">Admin</span>
-        </NavLink>
-        
-        {/* Quick Actions */}
-        <div className="pt-4">
-          <QuickActions />
-        </div>
       </nav>
       
-      <div className="p-4 border-t border-sidebar-border">
-        <div className="px-4 py-3 rounded-lg bg-sidebar-accent/50">
-          <p className="text-xs text-sidebar-foreground/60 text-center">
-            Kuwait Oil Company
-          </p>
+      {/* Logo at bottom */}
+      <div className="p-4 border-t border-border">
+        <div className="flex justify-center">
+          <img 
+            src={logo} 
+            alt="KOC Logo" 
+            className="w-16 h-16 object-contain opacity-80"
+          />
         </div>
       </div>
     </aside>
