@@ -1,4 +1,4 @@
-import { LayoutDashboard, PlusCircle, Search, Menu } from "lucide-react";
+import { LayoutDashboard, PlusCircle, Search } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { cn } from "@/lib/utils";
 import hsseLogo from "@/assets/hsse-logo.png";
@@ -12,12 +12,9 @@ const navItems = [
 export const Sidebar = () => {
   return (
     <aside className="fixed left-0 top-0 h-screen w-52 bg-sidebar border-r border-sidebar-border flex flex-col">
-      {/* Header with hamburger and logo */}
-      <div className="px-4 py-4 border-b border-sidebar-border flex items-center gap-3">
-        <button className="p-1 hover:bg-sidebar-accent rounded">
-          <Menu className="w-5 h-5 text-sidebar-foreground" />
-        </button>
-        <img src={hsseLogo} alt="HSSE Logo" className="h-[60px] w-auto object-contain" />
+      {/* Header with logo */}
+      <div className="px-4 py-4 border-b border-sidebar-border flex items-center justify-center">
+        <img src={hsseLogo} alt="HSSE Logo" className="h-20 w-auto object-contain" />
       </div>
       
       <nav className="flex-1 p-3 space-y-1">
