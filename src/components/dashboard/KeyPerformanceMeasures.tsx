@@ -27,14 +27,14 @@ const kpmItems: KPMItem[] = [
   {
     label: "Environment Incidents",
     value: 20,
-    target: 0,
+    target: 94,
     icon: <Leaf className="w-5 h-5 text-success" />,
     iconBgColor: "bg-success/10",
   },
   {
     label: "Volume Spilled",
     value: 68,
-    target: 0,
+    target: 800,
     icon: <Droplets className="w-5 h-5 text-info" />,
     iconBgColor: "bg-info/10",
   },
