@@ -11,7 +11,7 @@ const navItems = [
 
 export const Sidebar = () => {
   return (
-    <aside className="fixed left-0 top-0 h-screen w-52 bg-sidebar border-r border-sidebar-border flex flex-col">
+    <aside className="fixed left-0 top-0 h-screen w-52 bg-sidebar flex flex-col">
       {/* Header with logo */}
       <div className="px-2 py-6 border-b border-sidebar-border flex items-center justify-center">
         <img 
