@@ -44,7 +44,7 @@ export const PerformanceIndex = ({ title, value, variant = "primary", isOpen = f
         ? "border-primary/30 bg-primary/5" 
         : "border-border bg-card"
     )}>
-      <Collapsible open={isOpen} onOpenChange={onToggle}>
+      <Collapsible open={isOpen} onOpenChange={() => onToggle?.()}>
         <div className="flex items-center gap-2 mb-4">
           {isPrimary ? (
             <LayoutGrid className="w-5 h-5 text-primary" />
