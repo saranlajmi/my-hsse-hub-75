@@ -19,12 +19,12 @@ const Index = () => {
           {/* Performance Indices */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <PerformanceIndex 
-              title="KOC HSE Performance Index" 
+              title="KOC Excellence Index" 
               value="80%" 
               variant="primary"
             />
             <PerformanceIndex 
-              title="Directorate HSE Performance Index" 
+              title="Directorate Excellence Index" 
               value="76%" 
               variant="secondary"
             />
