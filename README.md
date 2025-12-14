@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/ae79fcae-63af-477c-81b0-aefeee399894
+**URL**: https://vigil-ai-pro.lovable.app/ 
 
 ## How can I edit this code?
 
